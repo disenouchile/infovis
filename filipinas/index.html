@@ -12,13 +12,13 @@
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
         
         <style>
-            /* --- ESTILO GENERAL (MODO OSCURO - DEEP BLUE) --- */
+            
             :root {
-                --fondo: #0f172a; /* Azul muy oscuro (casi negro) */
-                --figura: #f1f5f9; /* Texto casi blanco */
-                --acento: #ef4444; /* Rojo brillante para destacar sobre oscuro */
-                --gris: #94a3b8;   /* Gris azulado para textos secundarios */
-                --borde: #334155;  /* Color para líneas divisorias */
+                --fondo: #0f172a; 
+                --figura: #f1f5f9;
+                --acento: #ef4444; 
+                --gris: #94a3b8;  
+                --borde: #334155; 
             }
 
             * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,7 +31,7 @@
                 color: var(--figura);
             }
 
-            /* --- HEADER ESTILO "SIN CITY" --- */
+            
             header {
                 width: 100%;
                 min-height: 85vh;
@@ -49,10 +49,10 @@
                 position: absolute;
                 top: 0; left: 0; width: 100%; height: 100%;
                 
-                /* PEGA AQUÍ TU ENLACE DIRECTO DE INTERNET */
+                
                 background: url("https://i.postimg.cc/bN0mLWq9/header-bohol.png") center/cover no-repeat;
                 
-                /* Filtro suave para modo oscuro */
+               
                 filter: brightness(80%); 
                 z-index: -2;
             }
@@ -61,7 +61,7 @@
                 content: "";
                 position: absolute;
                 top: 0; left: 0; width: 100%; height: 100%;
-                /* Degradado para que el texto blanco se lea bien abajo */
+               
                 background: linear-gradient(to bottom, transparent 0%, var(--fondo) 100%);
                 z-index: -1;
             }
@@ -97,7 +97,7 @@
 
             header a { color: var(--acento); font-weight: 700; text-decoration: none; }
 
-            /* --- MAIN LAYOUT --- */
+           
             main {
                 width: min(700px, 90%);
                 margin: 4rem auto;
@@ -107,7 +107,7 @@
                 main { width: min(800px, 60%); }
             }
 
-            /* --- TIPOGRAFÍA Y TEXTOS --- */
+            
             h2 {
                 font-family: "Merriweather", serif;
                 font-weight: 900;
@@ -143,9 +143,9 @@
                 margin-bottom: 2rem;
             }
 
-            /* Destacados en texto - Ajustado para fondo oscuro */
+            
             p em { 
-                background: rgba(239, 68, 68, 0.2); /* Rojo semitransparente */
+                background: rgba(239, 68, 68, 0.2); 
                 color: #fff;
                 padding: 0 4px; 
                 font-style: normal; 
@@ -162,12 +162,12 @@
                 font-size: 0.9em;
             }
 
-            /* --- IMÁGENES Y FIGURAS --- */
+            
             figure {
                 width: 100%;
                 margin: 2.5rem 0;
-                border: 1px solid var(--borde); /* Borde sutil */
-                background: #1e293b; /* Fondo ligeramente más claro que el body */
+                border: 1px solid var(--borde); 
+                background: #1e293b; 
                 padding: 0.5rem;
             }
 
@@ -175,7 +175,7 @@
                 width: 100%;
                 height: auto;
                 display: block;
-                /* Filtro para integrar imágenes en modo oscuro */
+               
                 filter: brightness(0.9) contrast(1.1); 
             }
 
@@ -192,12 +192,10 @@
                 max-width: 500px;
                 display: block;
                 margin: 3rem auto;
-                /* Invertir colores si tus mapas son negros sobre blanco */
-                /* filter: invert(1) hue-rotate(180deg); */ 
-                /* Descomenta la línea de arriba si tus imágenes de mapas tienen fondo blanco y quieres que se vean oscuras */
+               
             }
 
-            /* --- TABLAS --- */
+            
             table {
                 width: 100%;
                 border-collapse: collapse;
@@ -222,32 +220,32 @@
                 padding: 0.75rem 1rem;
                 color: #cbd5e1;
             }
-            /* Alinear iconos y texto de tabla */
+           
             th svg { width: 1rem; height: 1rem; fill: var(--acento); margin-right: 8px; vertical-align: text-bottom;}
             table th, table td { text-align: left; }
             
-            /* Enlaces dentro de la tabla */
+           
             table a { color: #60a5fa; text-decoration: none; }
             table a:hover { text-decoration: underline; }
 
-            /* --- MAPA LEAFLET --- */
+            
             div.mapas {
                 width: 100%;
                 height: 500px;
                 margin: 2rem 0;
-                background: #000; /* Fondo negro mientras carga */
+                background: #000; 
                 z-index: 1;
                 border: 1px solid var(--borde);
             }
 
-            /* --- SVG COMPARACIÓN --- */
+            
             #viz {
                 margin: 2rem auto;
                 display: block;
                 max-width: 100%;
             }
 
-            /* --- FUENTES Y FOOTER --- */
+           
             .fuentes {
                 background: #1e293b;
                 padding: 2rem;
@@ -261,14 +259,14 @@
             footer {
                 text-align: center;
                 padding: 3rem;
-                background: #020617; /* Más oscuro que el fondo */
+                background: #020617; 
                 color: var(--gris);
                 font-size: 0.8rem;
                 border-top: 1px solid var(--borde);
             }
             footer a { color: #fff; border-bottom: 1px solid var(--acento); text-decoration: none;}
 
-            /* Utilidades */
+           
             .escondido { display: none; }
             main object { width: 100%; margin: 2rem 0; }
             .mobile-only { display: block; }
@@ -281,11 +279,11 @@
             .leaflet-marker-icon {
                 filter: hue-rotate(140deg) brightness(1.1) saturate(1.5);
             }
-            /* --- TIMELINE VERTICAL CENTRADA --- */
+           
 .timeline-vertical {
     position: relative;
     width: 80%;
-    margin: 3rem auto;   /* Centra el bloque */
+    margin: 3rem auto;  
     padding: 2rem 0;
 }
 
@@ -331,12 +329,12 @@
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    margin-right: auto;   /* Caja a la izquierda */
+    margin-right: auto;  
     text-align: left;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    margin-left: auto;    /* Caja a la derecha */
+    margin-left: auto;   
     text-align: left;
 }
 
@@ -480,27 +478,26 @@
         </main>
 
         <footer>
-            <p>Desarrollado para <a href="#" target="_blank">Diseño y visualización de información | Universidad de Chile</a> &copy; 2025</p>
+            <p>Desarrollado para <a href="https://github.com/disenouchile/infovis" target="_blank">Diseño y visualización de información | Universidad de Chile</a> &copy; 2025</p>
         </footer>
 
         <script>
-            // --- SCRIPT FINAL DEPURADO ---
+           
 
-            // 1. Referencias a elementos
+            
             const tabla = document.getElementById("ph-table") || document.getElementById("cl") || document.getElementById("jp");
             const viz = document.getElementById("viz");
             
-            // 2. Coordenadas de Filipinas
+           
             const latPH = 12.8797;
             const lonPH = 121.7740;
 
-            // 3. Contadores
+           
             var conteoPH = 0;
             var conteoJP = 0;
             var conteoCL = 0;
 
-            // --- FIX DE ICONOS (Para que no salgan rotos) ---
-            // Esto fuerza a cargar las imágenes desde un servidor seguro
+          
             delete L.Icon.Default.prototype._getIconUrl;
             L.Icon.Default.mergeOptions({
                 iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -510,26 +507,25 @@
 
             async function datos(url) {
                 try {
-                    // Mensaje de carga
+                   
                     if(viz) viz.innerHTML = '<text x="50" y="25" text-anchor="middle" font-family="sans-serif" fill="#fff">Cargando datos...</text>';
 
                     let consulta = await fetch(url);
                     let data = await consulta.json();
                     let temblores = data.features;
 
-                    // Configuración Mapa (OSCURO)
+                   
                     if(document.getElementById("mapaPH")) {
                         const mapa = L.map("mapaPH").setView([latPH, lonPH], 5);
                         
-                        // Mapa base oscuro (Dark Matter)
+                        
                         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
                             attribution: '&copy; OpenStreetMap, &copy; CARTO',
                             subdomains: 'abcd',
                             maxZoom: 19
                         }).addTo(mapa);
 
-                        // Bucle para marcadores
-                        // NOTA: Ya no usamos 'redIcon'. Usamos el default y lo pintamos con CSS.
+                       
                         temblores.forEach((t) => {
                             let mag = t.properties.mag;
                             let place = t.properties.place;
@@ -541,7 +537,7 @@
                         });
                     }
 
-                    // 4. Bucle de Conteo y Tabla
+                   
                     temblores.forEach((t) => {
                         let mag = t.properties.mag;
                         let place = t.properties.place;
@@ -564,12 +560,12 @@
                         }
                     });
 
-                    // 5. DIBUJAR SVG (Ajustado para fondo oscuro)
+                    
                     const rPH = conteoPH > 0 ? Math.sqrt(conteoPH) : 3;
                     const rJP = conteoJP > 0 ? Math.sqrt(conteoJP) : 3;
                     const rCL = conteoCL > 0 ? Math.sqrt(conteoCL) : 3;
 
-                    // Colores para modo oscuro
+                   
                     const colorTexto = "#fff"; 
                     const colorGris = "#475569";
                     const colorRojo = "#ef4444";
