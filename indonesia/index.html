@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Indonesia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        :root {
+            --figura: #3b1d03;
+            --fondo: #fff1e4;
+            --gris-claro: #fce4c8;
+            --gris-oscuro: #a3673a;
+            --border-radius-base: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Chivo", sans-serif;
+            font-weight: 200;
+            line-height: 1.4;
+            background: var(--fondo);
+            color: var(--figura);
+            overflow-x: hidden;
+        }
+        a { color: var(--figura); text-decoration: underline; }
+        a:hover { text-decoration: none; }
+        p { margin: 0.5rem 0; text-align: justify; word-spacing: normal; letter-spacing: -0.01em; hyphens: auto; }
+        p em { font-weight: 600; font-style: normal; }
+        p span { border-radius: 6px; padding: 0 0.5rem; background-color: #ffd59a; }
+        p.lead { font-size: 1.1rem; font-weight: 300; line-height: 1.5; letter-spacing: -0.005em; }
+        img, .event-card, .fuentes, div.mapas, table, figure.mapamundi-float { border-radius: var(--border-radius-base); }
+        .escondido { display: none; }
+        .clearfix::after { content: ""; display: table; clear: both; }
+
+        .banner-wrapper { position: relative; width: 100%; margin-bottom: 60px; }
+        .banner-superior { width: 100%; height: auto; display: block; margin-bottom: 0; }
+        .scroll-indicator {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 10;
+            background-color: rgba(255, 241, 228, 0.8);
+            color: var(--figura);
+            padding: 8px 16px;
+            border-radius: var(--border-radius-base);
+            box-shadow: 4px 4px 0px var(--gris-oscuro);
+            text-align: center;
+            font-weight: 500;
+            font-size: 1rem;
+            animation: flotar 2s ease-in-out infinite;
+        }
+        .scroll-indicator span { display: block; font-size: 1.5rem; line-height: 1rem; margin: 5px 0; }
+        
+        header { width: 100%; background: var(--fondo); text-align: center; display: flex; align-items: flex-end; margin-bottom: 1rem; }
+        header div { width: min(800px, 90%); margin: 0 auto; }
+        header h1 { font-size: calc(2rem + 3vw); font-weight: 900; line-height: 0.9; margin-bottom: 1rem; }
+        header h5 { font-size: calc(1rem + 0.25vw); letter-spacing: 0.05rem; margin-bottom: 1.2rem; margin-top: 1.4rem; }
+        header h6 { font-size: 1rem; letter-spacing: 0.1rem; color: var(--gris-oscuro); padding-bottom: 0.2rem; margin-bottom: 0.2rem; }
+
+        main { width: min(800px, 90%); margin: 0 auto; }
+        h2.titulo-main, h3.titulo-main { font-weight: 800; text-align: center; margin: 2rem 0 1rem 0; }
+        .cinturon { width: 100%; margin: 2rem 0; display: block; }
+        
+        .intro-block { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; margin-bottom: 2rem; position: relative; }
+        figure.mapamundi-float { margin: 0; flex-shrink: 0; background: var(--gris-claro); box-shadow: 2px 2px 0px var(--gris-oscuro); text-align: center; padding: 0; width: 145px; height: auto; }
+        figure.mapamundi-float img { width: 100%; height: auto; display: block; border-radius: var(--border-radius-base) var(--border-radius-base) 0 0; }
+        figure.mapamundi-float figcaption { font-size: 0.8rem; color: var(--gris-oscuro); margin-top: 0.05rem; margin-bottom: 1rem; }
+        .intro-block .lead { margin-bottom: 0; }
+
+        .scroll-container { height: 400vh; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background-color: var(--gris-claro); }
+        .scroll-container::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 250px; background: linear-gradient(to bottom, var(--fondo) 0%, var(--gris-claro) 100%); z-index: 1; pointer-events: none; }
+        .scroll-container::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 250px; background: linear-gradient(to top, var(--fondo) 0%, var(--gris-claro) 100%); z-index: 1; pointer-events: none; }
+        
+        .sticky-wrapper { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; z-index: 2; }
+        .horizontal-track { display: flex; gap: 5vw; padding: 0 10vw; width: max-content; will-change: transform; }
+        
+        .event-card { width: 85vw; height: auto; max-height: 80vh; flex-shrink: 0; background: var(--fondo); border: 1px solid var(--gris-claro); padding: 1.5rem; box-shadow: 10px 10px 0px var(--figura); display: flex; flex-direction: column; justify-content: center; }
+        .event-card h3 { text-align: left; margin: 0 0 0.5rem 0; font-size: 1.5rem; }
+        .event-card .date { font-family: monospace; font-size: 0.9rem; color: var(--gris-oscuro); margin-bottom: 1rem; display: block; border-bottom: 2px solid var(--figura); padding-bottom: 0.5rem; }
+        .event-card img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; filter: grayscale(0%); transition: filter 0.4s ease, transform 0.4s ease; transform-origin: center; position: relative; }
+        .event-card img:hover { filter: grayscale(100%); transform: scale(1.6); z-index: 10; object-fit: contain; }
+        .magnitude-badge { display: inline-block; background: var(--figura); color: var(--fondo); padding: 0.2rem 0.5rem; font-weight: bold; font-size: 0.8rem; margin-bottom: 0.5rem; border-radius: 4px; }
+
+        div.container-datos { width: min(800px, 90%); margin: 2rem auto; }
+        .container-datos h2 { margin: 2rem 0 1rem 0; border-bottom: 1px solid var(--figura); font-weight: 800; padding: 0.25rem; text-align: left; }
+        .container-datos table { width: 100%; text-align: center; border-collapse: collapse; margin-top: 1rem; overflow: hidden; }
+        .container-datos table a { text-decoration: none; }
+        .container-datos table a:hover:after { content: " ↴"; }
+        .container-datos th, .container-datos td { border-bottom: 1px solid var(--figura); padding: 0.25rem; font-size: 90%; }
+        .container-datos th { font-weight: 700; text-align: left; line-height: 1.5; background: transparent; }
+        .container-datos td { text-align: left; }
+        .container-datos td strong { font-weight: 700; }
+        .container-datos td span { color: var(--gris-oscuro); }
+        .container-datos th svg { width: 1.5rem; height: 1.5rem; margin-bottom: -0.25rem; margin-left: -0.25rem; fill: #d26818; }
+
+        div.mapas { width: 100%; height: 400px; margin: 1rem 0 3rem 0; box-shadow: 0 0 4px var(--gris-claro); overflow: hidden; }
+        #viz text { font-family: "Chivo", sans-serif; }
+
+        .fuentes { margin-top: 2rem; border: 1px solid var(--gris-claro); background: var(--gris-claro); padding: 1rem; font-size: 90%; color: var(--gris-oscuro); }
+        .fuentes p { text-align: left; margin: 0.25rem 0; word-break: break-word; }
+        .fuentes h3 { color: var(--figura); }
+
+        footer.footer-datos { border-top: 3px solid var(--figura); margin: 2rem 0 0 0; padding: 1rem; text-align: center; font-size: 80%; letter-spacing: 1px; }
+        footer.footer-datos p { text-align: center; }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        @media (min-width: 600px) {
+            .intro-block { flex-direction: row; align-items: flex-start; }
+        }
+        @media (min-width: 768px) {
+            .event-card { width: 40vw; max-width: 500px; }
+        }
+        @media (min-width: 1300px) {
+            .scroll-indicator { display: block; }
+            .intro-block { display: block; overflow: visible; }
+            figure.mapamundi-float { position: absolute; left: -175px; top: 0; width: 145px; }
+            .intro-block .lead { width: 100%; margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="escondido">
+        <symbol id="location" viewBox="0 0 100 100"><path d="M36.73,36.09a13,13,0,0,0,13,12.67A12.65,12.65,0,0,0,62.44,36.09a13.22,13.22,0,0,0-9.59-12.67v-18A31.37,31.37,0,0,1,81.14,36.58a30.89,30.89,0,0,1-4.55,16.36l-25,41.21H47.93L23,52.94A31.36,31.36,0,0,1,46.7,5.46v18A13.41,13.41,0,0,0,36.73,36.09Z"></path></symbol>
+        <symbol id="time" viewBox="0 0 100 100"><path d="M15.44,49H6.33a43.68,43.68,0,0,1,87.34,0L89.24,52.1,84.56,49a34.57,34.57,0,0,0-69.12,0Zm1.84,29.77A44.16,44.16,0,0,1,6.83,56.65h9.22a33.86,33.86,0,0,0,7.63,15.62Zm5.66,5.41,6.4-6.52A34.17,34.17,0,0,0,46.19,84.2v9.22A42.43,42.43,0,0,1,22.94,84.2ZM86.53,64.64,54.31,47.91V25.16H47.05V52.22l36,18.94ZM77.55,84a43.22,43.22,0,0,1-23.61,9.47V84.2a32.11,32.11,0,0,0,17-6.77Z"></path></symbol>
+        <symbol id="tsunami" viewBox="0 0 100 100"><path d="M91.33,88.22H8.92c-2.22,0-3.57-1.23-3.57-3a4.63,4.63,0,0,1,.61-2L17.77,62.51c5.17-9,16.36-13.9,27.06-13.9,11.57,0,17.35,5.54,17.35,10.46,0,4.3-3.32,7.13-6.77,8.12H53.07a3.49,3.49,0,0,0-3.56-3.82,3.42,3.42,0,0,0-3.32,3.45c0,3.81,4.79,7.5,13.16,7.5,7.75,0,18-3.57,24.6-9.1L94.28,83.3a3.51,3.51,0,0,1,.37,1.84A3,3,0,0,1,91.33,88.22Zm-10.21-28L52.71,10.36a3.19,3.19,0,0,0-5.66,0L26.14,47.51a36.15,36.15,0,0,1,12.67-4.06L49.88,23.89,73.37,64.36A19.72,19.72,0,0,0,81.12,60.17Z"></path></symbol>
+        <symbol id="magnitude" viewBox="0 0 100 100"><path d="M5.47,58.58H17A44.19,44.19,0,0,0,5.47,82.93Zm17.84,0h7.62l-3.56-35.8,13.4-5.66V30.65l12.06,4.8-4.06,22A31.82,31.82,0,0,0,18.39,89.08H9.53A40.25,40.25,0,0,1,23.31,58.58ZM50,61.9A27.18,27.18,0,0,1,77.18,89.08h-9a18.27,18.27,0,1,0-36.53,0H22.82A27.18,27.18,0,0,1,50,61.9Zm0,13.28a13.86,13.86,0,0,1,13.78,13.9H54.92a4.92,4.92,0,0,0-9.84,0h-9A14,14,0,0,1,50,75.18Zm8.24-16.6a35.85,35.85,0,0,0-5.29-1L57.5,32.87,45,28V15.28l4.42-1.85L69.56,18.6l3.81,40h3.32a40.25,40.25,0,0,1,13.78,30.5H81.61A31.68,31.68,0,0,0,58.24,58.58Zm24.72,0H94.53V82.93A45.16,45.16,0,0,0,83,58.58Z"></path></symbol>
+    </svg>
+
+    <div class="banner-wrapper">
+        <img src="fondo.webp" class="banner-superior" alt="Banner principal Indonesia" />
+        <div class="scroll-indicator">
+            <p>Desliza para ver más</p>
+            <span>⬇</span>
+        </div>
+    </div>
+
+    <header>
+        <div>
+            <h1>Indonesia: Tierra de Fuego y Sismos</h1>
+            <h5>Historia telúrica del archipiélago más grande del mundo</h5>
+            <h6>Por <a href="https://github.com/Irenk0">Irenko Blasco</a> | <a href="https://github.com/Alberto101102">Alberto Gallegos</a></h6>
+            <h6>25 de noviembre, 2025</h6>
+        </div>
+    </header>
+
+    <main class="clearfix">
+        <div class="intro-block">
+            <figure class="mapamundi-float">
+                <img src="minimapa.webp" alt="Mapa de Indonesia" />
+                <figcaption>Indonesia <br/>en el globo</figcaption>
+            </figure>
+            <p class="lead">
+                Indonesia está situada en el sudeste asiático, entre el océano Índico y el océano Pacífico; es <em>el mayor archipiélago del mundo</em>, compuesto por más de <span>17,000</span> islas, extendiéndose aproximadamente <span>5,120</span> kilómetros de este a oeste y <span>1,760</span> kilómetros de norte a sur. El país limita al norte con Malasia, al este con Papúa Nueva Guinea y al sureste con Timor Oriental.
+            </p>
+        </div>
+        
+        <img src="indonesia.webp" class="cinturon" alt="imagen editada por Gemini, le pedí sacar las letras">
+        <p>Indonesia se encuentra directamente sobre el <em>Anillo de Fuego del Pacífico</em>, una zona <em>sísmica y volcánica</em> extremadamente activa donde confluyen varias <em>placas tectónicas</em>, esto hace que la región sea <em>extremadamente susceptible a los terremotos</em>. Yace sobre la <em>convergencia</em> entre las placas de <em>Eurasia, Indoaustraliana, Pacífica y del mar de Filipinas</em>; esta posición geográfica hace que el país albergue cientos de volcanes —muchos de ellos todavía activos— y experimente una <em>intensa actividad tectónica</em>, que ha moldeado tanto su relieve montañoso como la fertilidad de sus suelos y la dinámica cultural y social de sus habitantes.</p>
+        <img src="anillofuego.webp" class="cinturon" alt="imagen editada por Gemini, le pedí sacar las letras">
+        <p>Debido a su ubicación en pleno <em>Anillo de Fuego del Pacífico</em> —una zona donde varias placas tectónicas convergen y generan una <em>intensa actividad sísmica</em>— Indonesia ha sido escenario de algunos de los <em>terremotos más poderosos y devastadores</em> registrados en la historia moderna. Esta interacción constante entre placas ha dado origen a <em>eventos sísmicos</em> que no solo han transformado el paisaje del archipiélago, sino también la vida de millones de personas. A continuación, se presenta una línea de tiempo que recoge los terremotos más significativos asociados a esta actividad tectónica, mostrando cómo cada uno de ellos ha marcado hitos importantes en la comprensión y evolución del <em>riesgo sísmico</em> en la región.</p>
+
+        <h2 class="titulo-main">Línea de Tiempo: Hitos Históricos</h2>
+        <p style="text-align: center; margin-top: -0.8rem; margin-bottom: 2.8rem; color: var(--gris-oscuro);">(Desliza hacia abajo para recorrer la historia)</p>
+    </main>
+
+    <div class="scroll-container">
+        <div class="sticky-wrapper">
+            <div class="horizontal-track">
+                <article class="event-card" style="background: var(--figura); color: var(--fondo);">
+                    <h3 style="font-size: 3rem; line-height: 1;">Cronología<br>Sísmica</h3>
+                    <p style="margin-top: 1rem;">Revisión de los <em>5 sismos más devastadores e históricos</em> en Indonesia ordenados cronológicamente, con detalles de su intensidad y fecha.</p><br/><small>¡Pasa el cursor sobre las imágenes!</small>
+                    <div style="margin-top: auto; text-align: right;">➜ Sigue bajando</div>
+                </article>
+
+                <article class="event-card">
+                    <span class="magnitude-badge">Magnitud 8.3</span>
+                    <h3>Terremoto del Mar de Banda</h3>
+                    <span class="date">16 de noviembre, 1852</span>
+                    <figure>
+                        <img src="2.webp" alt="Terremoto del Mar de Banda">
+                    </figure>
+                    <p>Este sismo en el Mar de Banda causó daños severos y generó un <em>tsunami regional</em>, siendo uno de los eventos <em>más antiguos y devastadores</em> registrados en Indonesia.</p>
+                </article>
+
+                <article class="event-card">
+                    <span class="magnitude-badge">Magnitud 9.1</span>
+                    <h3>Terremoto en Sumatra</h3>
+                    <span class="date">26 de diciembre, 2004</span>
+                    <figure>
+                        <img src="4.webp" alt="Terremoto en Sumatra">
+                    </figure>
+                    <p>El terremoto de Sumatra-Andamán fue <em>el más poderoso registrado en Indonesia</em>, con una magnitud de <span>9.1</span>. Originó un <em>tsunami masivo</em> que causó la muerte de más de <span>230,000</span> personas, dejando una destrucción extensa en la región costera de Aceh y otras áreas cercanas.</p>
+                </article>
+
+                <article class="event-card">
+                    <span class="magnitude-badge">Magnitud 8.7</span>
+                    <h3>Segundo terremoto en Sumatra</h3>
+                    <span class="date">28 de marzo, 2005</span>
+                    <figure>
+                        <img src="5.webp" alt="Terremoto en Sumatra">
+                    </figure>
+                    <p>Otro gran terremoto en Sumatra con una magnitud de <span>8.7</span> que dejó <span>547</span> muertos y <em>miles de heridos y desaparecidos</em>, causando daños graves en vivienda e infraestructura.</p>
+                </article>
+
+                <article class="event-card">
+                    <span class="magnitude-badge">Magnitud 6.2</span>
+                    <h3>Terremoto en Java</h3>
+                    <span class="date">27 de mayo, 2006</span>
+                    <figure>
+                        <img src="3.webp" alt="Terremoto en Java">
+                    </figure>
+                    <p>Un <em>terremoto más pequeño</em> en magnitud pero <em>igual de devastador</em>, causó más de <span>6,200</span> muertos, <span>20,000</span> heridos y desplazó a <span>340,000</span> personas en la isla de Java.</p>
+                </article>
+
+                <article class="event-card">
+                    <span class="magnitude-badge">Magnitud 7.5</span>
+                    <h3>Terremoto de Sulawesi</h3>
+                    <span class="date">28 de septiembre, 2018</span>
+                    <figure>
+                        <img src="1.webp" alt="Terremoto de Sulawesi">
+                    </figure>
+                    <p>Este sismo fue acompañado por un <em>tsunami y licuefacción del suelo</em> que causaron graves daños y más de <span>800</span> muertos, principalmente en la ciudad de Palu, y destacó por su complejidad en efectos secundarios como <em>deslizamientos e inundaciones</em>.</p>
+                </article>
+
+                <article class="event-card" style="justify-content: center; align-items: center; border: none; box-shadow: none; background: transparent;">
+                    <h3>Fin de la línea de tiempo</h3>
+                    <p>Continúa bajando para ver los datos actuales.</p>
+                    <div style="font-size: 2rem; margin-top: 1rem;">⬇</div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-datos">
+        <p>En el marco de su constante <em>actividad tectónica</em>, Indonesia continúa registrando movimientos sísmicos de <em>diversa magnitud</em>, reflejo directo de su ubicación sobre el <em>Anillo de Fuego del Pacífico</em>. En los <em>últimos 30 días</em>, el país ha experimentado una serie de eventos significativos que ilustran la <em>intensidad y frecuencia</em> de la actividad sísmica en la región. A continuación, se presenta una tabla con los registros más recientes, organizada para ofrecer una visión <em>clara y actualizada</em> de los sismos detectados durante este periodo.</p>
+        <h2>Actividad Sísmica Reciente</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th><svg><use href="#location"></use></svg> place</th>
+                    <th><svg><use href="#time"></use></svg> time</th>
+                    <th><svg><use href="#magnitude"></use></svg> mag</th>
+                    <th><svg><use href="#tsunami"></use></svg> tsunami</th>
+                </tr>
+            </thead>
+            <tbody id="id"></tbody>
+        </table>
+
+        <div class="mapas" id="mapaID"></div>
+
+        <h2>Indonesia comparando con otros países</h2>
+        <p>Registros sobre <em><span> 3.9 M</span></em> del último mes, comparado con Japón y Rusia</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 100 50" id="viz"></svg>
+
+        <p>En suma, los registros recientes de sismos en Indonesia no sólo reflejan la <em>intensa dinámica tectónica</em> de la zona del Anillo de Fuego, sino también la importancia de asumir una <em>cultura del riesgo de desastres</em> que vaya más allá del fatalismo. Tal como destaca la campaña de la UNDRR <em>#LosDesastresNoSonNaturales</em>, es esencial reconocer que los desastres no ocurren simplemente por la fuerza de la naturaleza, sino que se agravan por <em>decisiones humanas</em>. Factores como una <em>planificación urbana inadecuada</em>, la vulnerabilidad social, la falta de infraestructura resistente y una gobernanza insuficiente incrementan significativamente los impactos cuando se producen eventos sísmicos.<br /><br /> Reconocer que los desastres no son simples fenómenos “naturales” nos permite generar <em>políticas, educación y alianzas</em> que aborden las <em>causas subyacentes del riesgo</em>, reduciendo así la exposición y <em>fortaleciendo la resiliencia</em>. Solo con esa mirada integrada podremos transformar la información sísmica —como la que acabamos de organizar— en <em>acción preventiva</em>, y avanzar hacia <em>sociedades más seguras y conscientes</em> de su capacidad para mitigar el impacto de futuros eventos.</p>
+        
+        <div class="fuentes">
+            <h3>Fuentes:</h3>
+            <p>USGS Earthquake Hazards Program:<br /> <a href="https://earthquake.usgs.gov/" target="_blank">https://earthquake.usgs.gov/</a></p>
+            <p>Britannica - 2004 Indian Ocean Tsunami:<br /> <a href="https://www.britannica.com/event/Indian-Ocean-tsunami-of-2004" target="_blank">https://www.britannica.com/event/Indian-Ocean-tsunami-of-2004</a></p>
+            <p>Wikipedia - Indonesia:<br /> <a href="https://es.wikipedia.org/wiki/Indonesia" target="_blank">https://es.wikipedia.org/wiki/Indonesia</a></p>
+            <p>Terremoto Indonesia: Los mayores seísmos de su historia: <a href=https://www.lavanguardia.com/internacional/20120411/54284301541/terremoto-indonesia-mayores-seismos-historia.html target="_blank">https://www.lavanguardia.com/internacional/20120411/54284301541/terremoto-indonesia-mayores-seismos-historia.html</a></p>
+            <p>Terremoto de Lombok de agosto de 2018: <a href=https://es.wikipedia.org/wiki/Terremoto_de_Lombok_de_agosto_de_2018 target="_blank">https://es.wikipedia.org/wiki/Terremoto_de_Lombok_de_agosto_de_2018</a></p>
+            <p>CNN - 20 años del tsunami más mortífero de la historia:<br /> <a href="https://cnnespanol.cnn.com/2024/12/26/mundo/fotos-tsunami-oceano-indico-2004-trax" target="_blank">https://cnnespanol.cnn.com/2024/12/26/mundo/fotos-tsunami-oceano-indico-2004-trax</a></p>
+            <p>Los 14 grandes sismos que azotaron Indonesia en los últimos 20 años:<br /> <a href="https://www.latercera.com/noticia/los-14-grandes-sismos-que-azotaron-indonesia-en-los-ultimos-20-anos/" target="_blank">https://www.latercera.com/noticia/los-14-grandes-sismos-que-azotaron-indonesia-en-los-ultimos-20-anos/</a></p>
+            <p>De Chile a Indonesia: estos son los terremotos de mayor magnitud de la historia:<br /> <a href="https://www.elconfidencial.com/mundo/2025-03-28/chile-indonesia-terremotos-mayor-magnitud-historia_4096687/" target="_blank">https://www.elconfidencial.com/mundo/2025-03-28/chile-indonesia-terremotos-mayor-magnitud-historia_4096687/</a></p>
+            <p>Los terremotos más devastadores que han sacudido Indonesia desde 2004:<br /> <a href="https://www.infobae.com/america/mundo/2018/08/06/los-terremotos-mas-devastadores-que-han-sacudido-indonesia-desde-2004/" target="_blank">https://www.infobae.com/america/mundo/2018/08/06/los-terremotos-mas-devastadores-que-han-sacudido-indonesia-desde-2004/</a></p>
+            <br />
+            <small>y <em>Perplexity.AI</em> más otras inteligencias artificiales <br />de busqueda para la recolecta de información general.</small>
+        </div>
+
+        <footer class="footer-datos">
+            <p>Desarrollado para <a href="#" target="_blank">Diseño y visualización de información | Universidad de Chile</a> &copy; 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        const stickySection = document.querySelector('.scroll-container');
+        const track = document.querySelector('.horizontal-track');
+        const indonesia = document.getElementById("id");
+        let conteoIndonesia = 0, conteoJapon = 0, conteoRusia = 0;
+
+        function transformScroll() {
+            const rect = stickySection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const sectionHeight = stickySection.offsetHeight;
+            const distanceFromTop = -rect.top;
+            const totalScrollDistance = sectionHeight - viewportHeight;
+            let percentage = distanceFromTop / totalScrollDistance;
+            
+            if (percentage < 0) percentage = 0;
+            if (percentage > 1) percentage = 1;
+
+            const moveDistance = track.scrollWidth - window.innerWidth;
+            track.style.transform = `translateX(-${percentage * moveDistance}px)`;
+        }
+
+        window.addEventListener('scroll', transformScroll);
+        transformScroll();
+
+        async function datos(url) {
+            try {
+                let consulta = await fetch(url);
+                let data = await consulta.json();
+                let temblores = data.features;
+
+                const mapaIndonesia = L.map("mapaID").setView([-1.98, 118.55], 3.5);
+                const iconoPersonalizado = L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+
+                L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                }).addTo(mapaIndonesia);
+
+                temblores.forEach((t) => {
+                    if (t.properties.place.includes("Indonesia") && t.properties.mag >= 4.0) {
+                        indonesia.innerHTML += `<tr>
+                            <td><a href="${t.properties.url}" target="_blank">${t.properties.place}</a></td>
+                            <td>${tiempo(t.properties.time)}</td>
+                            <td>${magnitud(t.properties.mag)}</td>
+                            <td>${tsunami(t.properties.tsunami)}</td>
+                        </tr>`;
+                        conteoIndonesia++;
+                        L.marker([t.geometry.coordinates[1], t.geometry.coordinates[0]], {icon: iconoPersonalizado})
+                            .addTo(mapaIndonesia)
+                            .bindPopup(t.properties.place);
+                    }
+                    if (t.properties.place.includes("Japan") && t.properties.mag >= 4.0) conteoJapon++;
+                    if (t.properties.place.includes("Russia") && t.properties.mag >= 4.0) conteoRusia++;
+                });
+
+                const maxTerremotos = Math.max(conteoIndonesia, conteoJapon, conteoRusia);
+                const divisor = maxTerremotos > 0 ? maxTerremotos / 14 : 1;
+
+                document.getElementById("viz").innerHTML = `
+                    <g>
+                        <circle cx="20" cy="25" r="${conteoJapon / divisor}" fill="#dc9836"></circle>
+                        <text x="20" y="25" font-size="1.5" dominant-baseline="middle" text-anchor="middle" fill="white">${conteoJapon}</text>
+                        <text x="20" y="45" font-size="2" dominant-baseline="middle" text-anchor="middle">Japón</text>
+                    </g>
+                    <g transform="translate(30)">
+                        <circle cx="20" cy="25" r="${conteoIndonesia / divisor}" fill="#dc9836"></circle>
+                        <text x="20" y="25" font-size="1.5" dominant-baseline="middle" text-anchor="middle" fill="white">${conteoIndonesia}</text>
+                        <text x="20" y="45" font-size="2" dominant-baseline="middle" text-anchor="middle">Indonesia</text>
+                    </g>
+                    <g transform="translate(60)">
+                        <circle cx="20" cy="25" r="${conteoRusia / divisor}" fill="#dc9836"></circle>
+                        <text x="20" y="25" font-size="1.5" dominant-baseline="middle" text-anchor="middle" fill="white">${conteoRusia}</text>
+                        <text x="20" y="45" font-size="2" dominant-baseline="middle" text-anchor="middle">Rusia</text>
+                    </g>
+                `;
+            } catch (error) {
+                console.error("Error al cargar los datos:", error);
+            }
+        }
+
+        datos("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson");
+
+        function magnitud(x) {
+            return x > 4.9 ? "<strong>" + x + "</strong>" : x;
+        }
+
+        function tiempo(x) {
+            return new Date(x).toLocaleString('es-CL', {
+                year: 'numeric', month: 'numeric', day: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            });
+        }
+
+        function tsunami(x) {
+            return x == 1 ? "<strong>¡Alerta de tsunami!</strong>" : "<span>Sin alerta</span>";
+        }
+    </script>
+</body>
+</html>
