@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>[Refiera con precisión a su país o región telúrica]</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <style>
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Colores */
+
+            :root{
+                --figura: #000;
+                --fondo: #fff;
+            }
+
+            /* Body y fuentes base */
+            body {
+                font-family: "Chivo", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 1.2;
+                background: var(--fondo);
+                color: var(--figura);
+            }
+
+            /* Header */
+            header {
+                width: 100%;
+                min-height: 90svh;
+                padding: 0;
+                margin: 0;
+                background:var(--fondo) url('img/fondo.webp') 0 -10vh no-repeat;
+                background-size:100% auto;
+                text-align: center;
+                display: flex;
+                align-items: flex-end;
+            }
+
+            header div {
+                width: min(780px, 90%);
+                margin: 0 auto;
+            }
+
+            header h1,
+            header h5,
+            header h6 {
+                margin: 0;
+            }
+
+            header h1 {
+                line-height: 1.1;
+                font-size: calc(3rem + 2vw);
+                font-weight: 400;
+            }
+
+            header h5,
+            header h6 {
+                line-height: 2;
+            }
+
+            header h5 {
+                font-size: calc(1rem + 0.25vw);
+                letter-spacing: 0.05rem;
+            }
+
+            header h6 {
+                font-size: 1rem;
+                letter-spacing: 0.1rem;
+            }
+
+            /* Main - Layout responsivo */
+            main {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            /* Títulos dentro de main */
+            h2,
+            h3 {
+                font-weight: 800;
+                padding: 0.25rem;
+                text-align: center;
+                margin: 0;
+            }
+
+            /* Enlaces */
+            a {
+                color: #000;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+
+            /* Párrafos */
+            p {
+                margin: 0.5rem 0;
+                padding: 0.25rem;
+            }
+
+            p.lead {
+                font-size: 120%;
+                font-weight: 200;
+            }
+
+            p em {
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            p span {
+                border-radius: 6px 6px;
+                padding: 0 0.5rem 0 1.5rem;
+                background-color: #a5d8f8;
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M5.47,58.58H17A44.19,44.19,0,0,0,5.47,82.93Zm17.84,0h7.62l-3.56-35.8,13.4-5.66V30.65l12.06,4.8-4.06,22A31.82,31.82,0,0,0,18.39,89.08H9.53A40.25,40.25,0,0,1,23.31,58.58ZM50,61.9A27.18,27.18,0,0,1,77.18,89.08h-9a18.27,18.27,0,1,0-36.53,0H22.82A27.18,27.18,0,0,1,50,61.9Zm0,13.28a13.86,13.86,0,0,1,13.78,13.9H54.92a4.92,4.92,0,0,0-9.84,0h-9A14,14,0,0,1,50,75.18Zm8.24-16.6a35.85,35.85,0,0,0-5.29-1L57.5,32.87,45,28V15.28l4.42-1.85L69.56,18.6l3.81,40h3.32a40.25,40.25,0,0,1,13.78,30.5H81.61A31.68,31.68,0,0,0,58.24,58.58Zm24.72,0H94.53V82.93A45.16,45.16,0,0,0,83,58.58Z"></path></svg>');
+                background-position: 0.3rem 0;
+                background-size: 1rem 1rem;
+                background-repeat: no-repeat;
+            }
+
+            /* Imágenes */
+            main img.mapamundi {
+                width:55%;
+                margin: 5% 23%;
+            }
+
+            main img.cinturon {
+                width: 100%;
+                margin: 3% 0;
+            }
+
+            /* Objects (Timeline SVG) */
+            main object {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            main object.mobile {
+                display: block;
+            }
+
+            main object.desktop {
+                display: none;
+            }
+
+            /* Figuras */
+            figure {
+                width: 100%;
+                margin: 1rem auto;
+                padding: 0.25rem;
+                border: 1px solid #eee;
+                box-shadow: 0 0 5px #fcfcfc;
+            }
+
+            figure img {
+                width: 100%;
+                height: auto;
+            }
+
+            figure figcaption {
+                font-size: 90%;
+                color: gray;
+                padding: 0.5rem;
+            }
+
+            /* Tabla */
+            table {
+                width: 100%;
+                text-align: center;
+            }
+
+            table a {
+                text-decoration: none;
+            }
+
+            table a:hover:after {
+                content: " ⤴";
+            }
+
+            th,
+            td {
+                border-bottom: 1px solid black;
+                border-collapse: collapse;
+                padding: 0.25rem;
+                line-height: 1.5;
+            }
+
+            th,
+            td strong {
+                font-weight: 700;
+            }
+
+            td {
+                font-size: 90%;
+            }
+
+            td span {
+                color: #999;
+            }
+
+            th:nth-child(1),
+            th:nth-child(2),
+            td:nth-child(1),
+            td:nth-child(2) {
+                text-align: left;
+            }
+
+            th svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-bottom: -0.25rem;
+                margin-left: -0.25rem;
+                fill: #d4292e;
+            }
+
+            /* Mapas */
+            div.mapas {
+                width: 100%;
+                height: 400px;
+                margin: 1rem 0 3rem 0;
+                box-shadow: 0 0 4px #eee;
+            }
+
+            .leaflet-control {
+                display: none;
+            }
+
+            /* Fuentes */
+            .fuentes {
+                margin-top: 2rem;
+                border: 1px solid #eee;
+                background: #fafafa;
+                padding: 1rem;
+                font-size: 90%;
+                color: #444;
+            }
+
+            /* Footer */
+            footer {
+                border-top: 1px solid #eee;
+                background:#fafafa;
+                margin: 2rem 0 0 0;
+                padding: 1rem;
+                text-align: center;
+                font-size: 80%;
+                letter-spacing: 1px;
+            }
+
+            /* Utilidades */
+            .escondido {
+                display: none;
+            }
+
+            /* Media Queries - Tablet */
+            @media (min-width: 768px) {
+                main {
+                    width: 70%;
+                }
+            }
+
+            /* Media Queries - Desktop */
+            @media (min-width: 1200px) {
+                main {
+                    width: 50%;
+                }
+            }
+
+            /* Media Queries - Landscape */
+            @media (orientation: landscape) {
+                main object.mobile {
+                    display: none;
+                }
+
+                main object.desktop {
+                    display: block;
+                }
+            }
+
+            /* Media Queries - Desktop objects margins */
+            @media (min-width: 768px) {
+                main object.desktop {
+                    margin-left: -10%;
+                    margin-right: -10%;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                main object.desktop {
+                    margin-left: -25%;
+                    margin-right: -25%;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="escondido">
+            <symbol id="location" viewBox="0 0 100 100">
+                <path d="M36.73,36.09a13,13,0,0,0,13,12.67A12.65,12.65,0,0,0,62.44,36.09a13.22,13.22,0,0,0-9.59-12.67v-18A31.37,31.37,0,0,1,81.14,36.58a30.89,30.89,0,0,1-4.55,16.36l-25,41.21H47.93L23,52.94A31.36,31.36,0,0,1,46.7,5.46v18A13.41,13.41,0,0,0,36.73,36.09Z"></path>
+            </symbol>
+
+            <symbol id="time" viewBox="0 0 100 100">
+                <path d="M15.44,49H6.33a43.68,43.68,0,0,1,87.34,0L89.24,52.1,84.56,49a34.57,34.57,0,0,0-69.12,0Zm1.84,29.77A44.16,44.16,0,0,1,6.83,56.65h9.22a33.86,33.86,0,0,0,7.63,15.62Zm5.66,5.41,6.4-6.52A34.17,34.17,0,0,0,46.19,84.2v9.22A42.43,42.43,0,0,1,22.94,84.2ZM86.53,64.64,54.31,47.91V25.16H47.05V52.22l36,18.94ZM77.55,84a43.22,43.22,0,0,1-23.61,9.47V84.2a32.11,32.11,0,0,0,17-6.77Z"></path>
+            </symbol>
+
+            <symbol id="tsunami" viewBox="0 0 100 100">
+                <path d="M91.33,88.22H8.92c-2.22,0-3.57-1.23-3.57-3a4.63,4.63,0,0,1,.61-2L17.77,62.51c5.17-9,16.36-13.9,27.06-13.9,11.57,0,17.35,5.54,17.35,10.46,0,4.3-3.32,7.13-6.77,8.12H53.07a3.49,3.49,0,0,0-3.56-3.82,3.42,3.42,0,0,0-3.32,3.45c0,3.81,4.79,7.5,13.16,7.5,7.75,0,18-3.57,24.6-9.1L94.28,83.3a3.51,3.51,0,0,1,.37,1.84A3,3,0,0,1,91.33,88.22Zm-10.21-28L52.71,10.36a3.19,3.19,0,0,0-5.66,0L26.14,47.51a36.15,36.15,0,0,1,12.67-4.06L49.88,23.89,73.37,64.36A19.72,19.72,0,0,0,81.12,60.17Z"></path>
+            </symbol>
+
+            <symbol id="magnitude" viewBox="0 0 100 100">
+                <path d="M5.47,58.58H17A44.19,44.19,0,0,0,5.47,82.93Zm17.84,0h7.62l-3.56-35.8,13.4-5.66V30.65l12.06,4.8-4.06,22A31.82,31.82,0,0,0,18.39,89.08H9.53A40.25,40.25,0,0,1,23.31,58.58ZM50,61.9A27.18,27.18,0,0,1,77.18,89.08h-9a18.27,18.27,0,1,0-36.53,0H22.82A27.18,27.18,0,0,1,50,61.9Zm0,13.28a13.86,13.86,0,0,1,13.78,13.9H54.92a4.92,4.92,0,0,0-9.84,0h-9A14,14,0,0,1,50,75.18Zm8.24-16.6a35.85,35.85,0,0,0-5.29-1L57.5,32.87,45,28V15.28l4.42-1.85L69.56,18.6l3.81,40h3.32a40.25,40.25,0,0,1,13.78,30.5H81.61A31.68,31.68,0,0,0,58.24,58.58Zm24.72,0H94.53V82.93A45.16,45.16,0,0,0,83,58.58Z"></path>
+            </symbol>
+        </svg>
+
+        <header>
+            <div>
+                <h1>México</h1>
+                <h5>Por <a href="https://github.com/cinnamonrolllabubu">Constanza Astudillo</a>, <a href="https://github.com/carlagonzalezv-del">Carla González</a> 
+            </div>
+        </header>
+
+
+        <main>
+            <img src="https://i.imgur.com/Tu6S7R4.png" referrerpolicy="no-referrer" class="mapamundi" alt="imagen editada por Gemini, le pedí sacar las letras"/>
+            <p class="lead">
+               México está ubicado en Norteamérica, y tiene una extensión de 1 964 375 km², lo que lo denomina como el décimo tercer país más extenso del mundo y el tercero más grande de América Látina. 
+            </p>
+
+            <p>En las costas mexicanas se encuentra el cinturón de fuego del pacífico, esto lo caracteriza como uno de los países con más actividad sísmica del mundo. También hay que agregar la presencia de volcanes como el Popocatépetl y el de Colima, los cuales están relacionados con la placa de Cocos y la placa de Rivera, por lo que se deslizan por abajo de la placa de América del Norte.</p>
+
+            <img src="https://i.imgur.com/90PySJ7.png" referrerpolicy="no-referrer" class="cinturon" alt="imagen editada por Gemini, le pedí sacar las letras"/>
+            
+              <img src="https://i.imgur.com/PEUpWyU.png" referrerpolicy="no-referrer" class="cinturon" alt="imagen editada por Gemini, le pedí sacar las letras"/>
+
+            <p>La principal característica de este cinturón es que es una zona de subducción, por lo que significa que sus placas tectónicas se deslizan y hunden debajo de las otras, lo que provoca los movimientos telúricos. Sus placas principales son:placa de América del Sur, placa de Nazca, placa del Pacífico, placa de América del Norte, placa de Filipinas y la placa de Australia.
+            </p>
+
+            <object data="img/timeline-desktop.svg" class="desktop" type="image/svg+xml"></object>
+            <object data="img/timeline-mobile.svg" class="mobile" type="image/svg+xml"></object>
+            
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Dinámica de Terremotos en México</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        h1 {
+            color: #333;
+            padding: 20px 0;
+        }
+        .timeline-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 0;
+            border-left: 3 
+             px solid #000;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+        .event {
+            position: relative;
+            text-align: center;
+        }
+        .event .circle {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .event h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .event p {
+            font-size: 1em;
+            color: #777;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #extra-info {
+            display: none;
+            margin-top: 20px;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Página Dinámica de Terremotos en México</h1>
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="event">
+                <div class="circle"></div>
+                <h3>1787 - Oaxaca</h3>
+                <p>Un terremoto devastador afectó Oaxaca, dejando daños importantes.</p>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <h3>1912 - Acambay</h3>
+                <p>Un sismo de magnitud 6.9 azotó Acambay, en el Estado de México.</p>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <h3>1957 - Acapulco</h3>
+                <p>Un terremoto de 7.8 golpeó Acapulco, afectando la infraestructura.</p>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <h3>1995 - Chiapas</h3>
+                <p>El sismo de 8.1 en Chiapas y Oaxaca causó severos daños.</p>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <h3>2017 - Puebla, Morelos y Ciudad de México</h3>
+                <p>El sismo de 7.1 afectó principalmente a la Ciudad de México.</p>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <h3>2022 - Michoacán</h3>
+                <p>Un terremoto de 7.7 causó muertes y daños materiales en Michoacán.</p>
+            </div>
+        </div>
+
+        <button class="button" onclick="toggleInfo()">Mostrar Más Información</button>
+        <div id="extra-info">
+            <h2>Información Adicional</h2>
+            <p>Los terremotos en México son una constante debido a la actividad sísmica en la región, y el país ha desarrollado sistemas avanzados de monitoreo sísmico y protocolos de emergencia para minimizar el impacto de estos desastres.</p>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar/ocultar la información adicional
+        function toggleInfo() {
+            var info = document.getElementById("extra-info");
+            if (info.style.display === "none") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+
+        // Asegurarse de que la animación de carga solo ocurra una vez
+        window.onload = function() {
+            document.querySelector('.timeline-container').style.opacity = 1;
+        };
+    </script>
+</body>
+</html>
+
+
+            <h3>Hito en línea de tiempo</h3>
+            <p>Partimos con el <em>sismo más grande registrado </em> en México, ocurrido el 28 de marzo de 1787. Este fue de <span>8.6 </span> grados richter y ocurrió en las costas de Oaxaca. Desató un gran tsunami que inundó todo a su paso hasta seis kilometros tierra adentro, cerca de Pochutla, lo que es hoy Puerto Ángel. A pesar de su gran magnitud no causó mayores decesos debido a que las costas estaban escasamente pobladas. </p>
+
+            <figure>
+                <img src="https://www.gob.mx/cms/uploads/article/main_image/119030/Suarez_Albini_2009_Figura_01.jpeg" />
+                <figcaption>Gobierno de México</figcaption>
+            </figure>
+
+            <p>El 19 de diciembre de 1912 ocurrió el sismo de acambay, que como su mismo nombre lo dice, ocurrió en Acambay, estado de México. Tuvo una magnitud de <span>7.0</span>, y dejó sobre la superficie de la tierra fracturas de más de un metro de altura. Dejó graves daños, donde la escasa edificación y poblados quedaron completamente destruidos. </p>
+
+            <figure>
+                <img src="https://www.gob.mx/cms/uploads/article/main_image/102109/01_sismo-acambay.jpg" />
+                <figcaption>Gobierno de México</figcaption>
+            </figure>
+
+            <h3>Hito en línea de tiempo</h3>
+            <p>El "Sismo del Ángel", con una magnitud de <span>7.8 </span> sacudió el sureste de Acapulco el 27 de julio de 1957. Este hecho fue llamado así ya que provocó la caída del Ángel del Monumento de la Independencia capitalino.</p>
+
+            <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/009520-003_DA%C3%91OS_DEL_SISMO_DEL_D%C3%8DA_28_JULIO_29_1957_%2830953952424%29.jpg" />
+                <figcaption>Wikipedia</figcaption>
+            </figure>
+
+            <p>En 1985, específicamente el 19 de diciembre la tierra volvió a temblar en México, esta vez en las costas de Michoacan. Este sismo fue de <span>8.1</span> grados. A pesar de estar a más de 300 km de distancia con Ciudad de México, la mayoría de los daños, heridos y fallecidos se concentraron acá. Laura Velasquez, quien es la coordinadora nacional de Protección Civil explicó que este terremoto marcó un "antes y después" en términos de la conciencia de la población ante estos movimientos telúricos. "No corro, no grito, no empujo" se transformó en la instrucción vital para los mexicanos desde este año. </p>
+
+            <figure>
+                <img src="https://imagenes.elpais.com/resizer/v2/5TXBU26ZIBKXPWJJL3KZEHZXPQ.jpg?auth=a807905dc4c8e9a2e8e2af28b9fc4d74b98eb2707a50207f9035c9905a3fe7d1&width=1960&height=1103&smart=true" />
+                <figcaption>El país</figcaption>
+            </figure>
+
+            <h3>Hito en línea de tiempo</h3>
+            <p>Empezando la década del 2010, se manifestó un sismo en Mexicali, Baja California. Este terremoto de <span>7.2</span> ocurrió el 4 de abril. El movimiento causó un intenso fenómeno de licuefacción y grietas notorias en la superficie, lo que causó daños en la infraestructura de canales de irrigación y casas en extensas áreas del Valle de Mexicali. Desde 1915 se han sentido solo 5 sismos de igual magnitud o superior a 7 grados, lo que amenaza la tranquila región. 
+
+            <figure>
+                <img src="https://blogcires.mx/wp-content/uploads/2020/04/licuefaccic3b2n-sismo-4-de-abril.png?w=660&h=490" />
+                <figcaption>Blog cires</figcaption>
+            </figure>
+            
+             <figure>
+                <img src="http://todos.cicese.mx/imagenes/internas/p1e2gqfpo9g2i1m5m1u4d15ii13pj6.png" />
+                <figcaption>Todos cicese</figcaption>
+            </figure>
+
+            <p>2012 fue testigo del sismo que causó la mayor cantidad de réplicas de la historia de México. Fueron 44 la cantidad de eventos, y se registraron sismos de <span>4.5 </span> grados durante los primeros 30 días. El causante de esto fue un temblor de <span>7.5</span></p> en Ometepec, Guerrero.  
+            
+            <img src="https://i.imgur.com/VmhXiLu.png" referrerpolicy="no-referrer" class="cinturon" alt="imagen editada por Gemini, le pedí sacar las letras"/>
+            
+            
+
+            <h3>Hito en línea de tiempo</h3>
+            <p>En el Golfo de Tehuantepec la tierra se sacudió un 7 de septiembre del 2017. Este movimiento fue de <span>8.2  </span>grados richter, y dejó 99 fallecidos. </p>
+            
+            <img src="https://i.imgur.com/KyObgR4.png" referrerpolicy="no-referrer" class="cinturon" alt="imagen editada por Gemini, le pedí sacar las letras"/>
+            
+           
+            <p>En la semana de fiestas patrias de 2022, se registró un movimiento telúrico de <span> 7.7</span> grados al sur de Coalcomán, Michoacán
+         Fue el 19 de septiembre el día que este hecho se sintió después de un simulacro nacional realizado, y no hubo daños graves.  </p>
+         
+            <img src="https://i.imgur.com/viBmELd.png" referrerpolicy="no-referrer" class="cinturon" alt="imagen editada por Gemini, le pedí sacar las letras"/>
+            
+
+           
+
+            <h2>Actividad sísmica actual de su país o región telúrica</h2>
+            <p>En la siguiente tabla se mostrarán los sismos del último mes. Todos son desde los 4.0 grados richter hacia arriba.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <svg><use href="#location"></use></svg> place
+                        </th>
+                        <th>
+                            <svg><use href="#time"></use></svg> time
+                        </th>
+                        <th>
+                            <svg><use href="#magnitude"></use></svg> mag
+                        </th>
+                        <th>
+                            <svg><use href="#tsunami"></use></svg> tsunami
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="cl"></tbody>
+            </table>
+
+            <div class="mapas" id="mapaCL"></div>
+
+            <h3>México comparando con otros países</h3>
+            <p>Registros sobre 3.9 M del último mes, comparado con Japón y Rusia</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" id="viz"></svg>
+
+            <p>Como se ha mencionado, México destaca por ser uno de los países con mayor actividad sísmica del mundo. Esta realidad ha transformado la cultura de prevención nacional, orientándola a mitigar los daños y fomentando principios como 'no correr, no gritar, no empujar' para mantener la calma. Asimismo, los avances tecnológicos han sido clave, permitiendo la activación oportuna de protocolos de seguridad segundos antes de un sismo mayor. Si bien los gráficos anteriores sugieren una menor incidencia reciente en el uso de estas alertas, México se mantiene preparado para enfrentar y responder eficazmente ante cualquier futuro evento sísmico.</p>
+
+            <div class="fuentes">
+                <h4>Fuentes:</h4>
+                <p>Terremotos en México: el nuevo sismo coincidió con el aniversario 32 de uno devastador en 1985. Clarin: <a href="#">https://www.clarin.com/mundo/terremotos-mexico-nuevos-sismos-coincidieron-aniversario-32-devastador-1985_0_B1gX41yjb.html</a>.</p>
+                <p>‘Cinturón de fuego’: ¿Qué es, dónde está y de qué forma afecta a México?. El Financiero: <a href="#">https://www.elfinanciero.com.mx/ciencia/2022/09/22/cinturon-de-fuego-que-es-donde-esta-y-de-que-forma-afecta-a-mexico/</a>.</p>
+                <p>Los 8 sismos más catastróficos en la historia de México. Forbes: <a href="#">https://forbes.com.mx/los-8-sismos-mas-catastroficos-en-la-historia-de-mexico/</a>.</p>
+                <p>1787: El sismo de San Sixto. Gobierno de México: <a href="#">https://www.gob.mx/cenapred/articulos/1787-el-sismo-de-san-sixto</a>.</p>
+                <p>Monumento a la Independencia. Wikipedia: <a href="#">https://es.wikipedia.org/wiki/Monumento_a_la_Independencia</a>.</p>
+                <p>"No corro, no grito, no empujo": qué cambió en Ciudad de México tras el devastador terremoto que dejó miles de muertos hace 40 años. BBC News Mundo: <a href="#">https://www.bbc.com/mundo/articles/cy0v8jyvw0lo</a>.</p>
+                <p>Sismo El Mayor-Cucapah
+                . Blogcires: <a href="#">https://blogcires.mx/2020/04/04/sismo-el-mayor-cucapah/</a>.</p>
+                <p>Los tres sismos que marcaron un 19 de septiembre: de 1985, 2017 y 2022
+               https://www.milenio.com/policia/cuantas-veces-ha-temblado-19-de-septiembre-sismos-1985-2017-y-2022. Milenio: <a href="#">https://www.milenio.com/policia/cuantas-veces-ha-temblado-19-de-septiembre-sismos-1985-2017-y-2022</a>.</p>
+                <p>Qué es el cinturón de fuego y cómo afecta a México. Infobae: <a href="#">https://www.infobae.com/america/mexico/2022/09/22/que-es-el-cinturon-de-fuego-y-como-afecta-a-mexico/</a>.</p> 
+                <p>#ConoceMás ¿Cómo funciona la alerta sísmica?. Gobierno de México: <a href="#">https://www.gob.mx/cenapred/articulos/conocemas-como-funciona-la-alerta-sismica</a>.</p>
+             
+            </div>
+        </main>
+
+        <footer>
+            <p>Desarrollado para <a href="#" target="_blank">Diseño y visualización de información | Universidad de Chile</a> &copy; 2025</p>
+        </footer>
+
+        <script>
+            //Poner aquí lo que corresponda.<script>
+             const chilenos = document.getElementById("cl");
+           
+
+            var conteoMexicano = 0;
+            var conteoRusos = 0;
+            var conteoJaponeses = 0;
+            
+
+            async function datos(url) {
+                try {
+                    let consulta = await fetch(url);
+                    let data = await consulta.json();
+                    let temblores = data.features;
+                    console.log(temblores);
+
+                    //acá meto el mapa
+                    const mapaChile = L.map("mapaCL").setView([24.058067739448607, -102.8006894558729],
+                    3.5);
+                    const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    }).addTo(mapaChile);
+
+                    temblores.forEach((t) => {
+                        //si es que dice Chile en el place
+                        if (t.properties.place.includes("Mexico") && t.properties.mag > 3.9) {
+                            chilenos.innerHTML += `<tr>
+                            <td><a href="${t.properties.url}" target="_blank">${t.properties.place}</a></td>
+                            <td>${tiempo(t.properties.time)}</td>
+                            <td>${magnitud(t.properties.mag)}</td>
+                            <td>${tsunami(t.properties.tsunami)}</td>
+                        </tr>`;
+                            conteoMexicano++;
+                            //atención a este cambio
+                            L.marker([t.geometry.coordinates[1], t.geometry.coordinates[0]]).addTo(mapaChile).bindPopup(t.properties.place);
+                        }
+                        // si es que dice Mexico en el place
+                        if (t.properties.place.includes("Russia") && t.properties.mag > 3.9) {
+                           
+                            conteoRusos++;
+                        }
+                        // //si es que dice Japan en el place
+                        if (t.properties.place.includes("Japan") && t.properties.mag > 3.9) {
+                        
+                            conteoJaponeses++;
+                        }
+                      
+                    });
+
+                    document.getElementById("viz").innerHTML = `<g><circle cx="12" cy="25" r="${
+                        conteoMexicano / 8
+                    }" fill="#d4292e"></circle><text x="12" y="25" font-size="1.5" dominant-baseline="middle" text-anchor="middle" fill="white">${conteoMexicano}</text><text x="12" y="46" font-size="2" dominant-baseline="middle" text-anchor="middle">México</text><g>`;
+
+                    document.getElementById("viz").innerHTML += `<g transform="translate(
+                        30)"><circle cx="10" cy="25" r="${
+                        conteoJaponeses /8
+                    }" fill="#d4292e"></circle><text x="10" y="25" font-size="1.5" dominant-baseline="middle" text-anchor="middle" fill="white">${conteoJaponeses}</text><text x="10" y="46" font-size="2" dominant-baseline="middle" text-anchor="middle">Japón</text><g>`;
+
+                    document.getElementById("viz").innerHTML += `<g transform="translate(70)"><circle cx="10" cy="24" r="${
+                        conteoRusos /8
+                    }" fill="#d4292e"></circle><text x="10" y="25" font-size="1.5" dominant-baseline="middle" text-anchor="middle" fill="white">${conteoRusos}</text><text x="10" y="47" font-size="2" dominant-baseline="middle" text-anchor="middle">Rusia</text><g>`;
+
+                    
+                } catch (error) {
+                    console.error("Error al cargar los datos:", error);
+                }
+            }
+
+            datos("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson");
+
+            function magnitud(x) {
+                var numero = x;
+                if (x > 3.9) {
+                    numero = "<strong>" + x + "</strong>";
+                }
+                return numero;
+            }
+
+            function tiempo(x) {
+                var unix = x;
+                var dato = new Date(unix);
+                var formato = dato.toISOString();
+                var corte = formato.split("T");
+                return corte[0] + " a las " + corte[1].split(":")[0] + ":" + corte[1].split(":")[1] + " hrs.";
+            }
+
+            function tsunami(x) {
+                var mensaje = "<span>Sin alerta</span>";
+                if (x == 1) {
+                    mensaje = "<strong>¡Alerta de tsunami!</strong>";
+                }
+                return mensaje;
+            }
+        </script>
+    </body>
+</html>
+
+
+
