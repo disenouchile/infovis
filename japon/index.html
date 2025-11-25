@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>[Refiera con precisión a su país o región telúrica]</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <style>
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+
+            :root{
+                --figura: #fd0000;
+                --fondo: #000000;
+            }
+
+        
+            body {
+                font-family: "Chivo", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 1.2;
+                background: var(--fondo);
+                color: var(--figura);
+                
+                
+            }
+
+            /* Header */
+            header {
+                width: 100%;
+                min-height: 90svh;
+                padding: 0;
+                margin: 0;
+                background:var(--fondo) 0 -0vh no-repeat;
+                background-size:1% auto;
+                text-align: center;
+                display: flex;
+                align-items: flex-end;
+        
+            }
+
+            header div {
+                width: min(780px, 90%);
+                margin: 0 auto;
+                
+            }
+
+            header h1,
+            header h5,
+            header h6 {
+                margin: 0;
+            }
+
+            header h1 {
+                line-height: 1.1;
+                font-size: calc(3rem + 2vw);
+                font-weight: 700;
+            }
+
+
+            header h5 {
+                font-size: calc( 1rem + 0.2vw);
+                letter-spacing: 0.05rem;
+                font-weight: 200;
+                margin-top: 3rem;
+                ;
+            }
+
+            header h6 {
+                font-size: 1rem;
+                letter-spacing: .1rem;
+                font-weight: 200;
+                margin-top: 1rem;
+            }
+            
+            header h7 {
+                font-size: 2rem;
+                letter-spacing: .1rem;
+                font-weight: 200;
+                margin-top: 1rem; 
+            }
+            
+            
+            main {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            h2,
+            h3{
+                font-weight: 700;
+                padding: 0.25rem;
+                text-align: center;
+                margin: 0;
+            }
+
+
+            a {
+                color: #ff0000;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+
+            p {
+                margin: 0.5rem 0;
+                padding: 0.25rem;
+                font-weight: 200;
+                color: #ffffff;
+            }
+
+            p.lead {
+                font-size: 100%;
+                font-weight: 200;
+                font-weight: 200;
+            }
+
+            p em {
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            p span {
+                border-radius: 6px 6px;
+                padding: 0 0.5rem 0 1.5rem;
+                background-color: #a5d8f8;
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M5.47,58.58H17A44.19,44.19,0,0,0,5.47,82.93Zm17.84,0h7.62l-3.56-35.8,13.4-5.66V30.65l12.06,4.8-4.06,22A31.82,31.82,0,0,0,18.39,89.08H9.53A40.25,40.25,0,0,1,23.31,58.58ZM50,61.9A27.18,27.18,0,0,1,77.18,89.08h-9a18.27,18.27,0,1,0-36.53,0H22.82A27.18,27.18,0,0,1,50,61.9Zm0,13.28a13.86,13.86,0,0,1,13.78,13.9H54.92a4.92,4.92,0,0,0-9.84,0h-9A14,14,0,0,1,50,75.18Zm8.24-16.6a35.85,35.85,0,0,0-5.29-1L57.5,32.87,45,28V15.28l4.42-1.85L69.56,18.6l3.81,40h3.32a40.25,40.25,0,0,1,13.78,30.5H81.61A31.68,31.68,0,0,0,58.24,58.58Zm24.72,0H94.53V82.93A45.16,45.16,0,0,0,83,58.58Z"></path></svg>');
+                background-position: 0.3rem 0;
+                background-size: 1rem 1rem;
+                background-repeat: no-repeat;
+            }
+
+            /* FOTOOOOOS*/
+            main img.mapamundi {
+                width: 100%;
+                margin: 10% 0%;
+            }
+
+            main img.cinturon {
+                width: 100%;
+                margin: 3% 0%;
+            }
+
+            .imagenes-lado-a-lado {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                margin: 2rem 0;
+                flex-wrap: wrap;
+            }
+
+            .imagenes-lado-a-lado img {
+                width: 48%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 5px;
+    
+            }
+            
+            
+           
+            main object {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            main object.mobile {
+                display: block;
+            }
+
+            main object.desktop {
+                display: none;
+            }
+
+
+            figure {
+                width: 100%;
+                margin: 1rem auto;
+                padding: 0.25rem;
+                border: 1px solid #eee;
+                box-shadow: 0 0 5px #fcfcfc;
+            }
+
+            figure img {
+                width: 100%;
+                height: auto;
+            }
+
+            figure figcaption {
+                font-size: 90%;
+                color: gray;
+                padding: 0.5rem;
+            }
+
+            
+            table {
+                width: 100%;
+                text-align: center;
+            }
+
+            table a {
+                text-decoration: none;
+            }
+
+            table a:hover:after {
+                content: " ⤴";
+            }
+
+            th,
+            td {
+                border-bottom: 1px solid black;
+                border-collapse: collapse;
+                padding: 0.25rem;
+                line-height: 1.5;
+            }
+
+            th,
+            td strong {
+                font-weight: 700;
+            }
+
+            td {
+                font-size: 90%;
+            }
+
+            td span {
+                color: #999;
+            }
+
+            th:nth-child(1),
+            th:nth-child(2),
+            td:nth-child(1),
+            td:nth-child(2) {
+                text-align: left;
+            }
+
+            th svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-bottom: -0.25rem;
+                margin-left: -0.25rem;
+                fill: #2b678c;
+            }
+
+            /* MAPAS */ 
+            div.mapas {
+                width: 100%;
+                height: 400px;
+                margin: 1rem 0 3rem 0;
+                box-shadow: 0 0 4px #eee;
+            }
+
+            .leaflet-control {
+                display: none;
+            }
+
+            /* FUENTES */
+            .fuentes {
+                margin-top: 3rem;
+                border: 2px solid rgba(253, 0, 0, 0.3);
+                background: rgba(255, 0, 0, 0.08);
+                padding: 1rem;
+                font-size: 80%;
+                color: #444;
+            }
+
+            /* Footer */
+            footer {
+                border-top: 1px solid #000000;
+                background:rgba(255, 0, 0, 0.09);
+                margin: 2rem 0 0 0;
+                padding: 1rem;
+                text-align: center;
+                font-size: 80%;
+                letter-spacing: 1px;
+            }
+
+            /* Utilidades */
+            .escondido {
+                display: none;
+            }
+
+            /* Timeline Styles */
+            .timeline-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 44rem 1rem;
+                position: relative;
+            }
+
+            .timeline-title {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 3rem;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.8s ease forwards;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Línea central */
+            .timeline-line {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 4px;
+                height: 76%;
+                background: linear-gradient(180deg, transparent, #fd0000, transparent);
+                opacity: 0.3;
+            }
+
+            .timeline-progress {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0%;
+                background: #fd0000;
+                transition: height 0.3s ease;
+                box-shadow: 0 0 20px rgba(253, 0, 0, 0.5);
+            }
+
+
+            .timeline-items {
+                position: relative;
+                z-index: 1;
+            }
+
+            .timeline-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 6rem;
+                opacity: 0;
+                transform: translateY(50px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+
+            .timeline-item.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .timeline-content {
+                width: 45%;
+                padding: 1.5rem;
+                background: rgba(253, 0, 0, 0.05);
+                border: 1px solid rgba(253, 0, 0, 0.3);
+                border-radius: 8px;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+
+            .timeline-content:hover {
+                background: rgba(253, 0, 0, 0.1);
+                border-color: rgba(253, 0, 0, 0.6);
+                transform: scale(1.02);
+                box-shadow: 0 5px 20px rgba(253, 0, 0, 0.3);
+            }
+
+            .timeline-year {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #fd0000;
+                margin-bottom: 0.5rem;
+                text-shadow: 0 0 10px rgba(253, 0, 0, 0.5);
+            }
+
+            .timeline-title-event {
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: #ff3333;
+            }
+
+            .timeline-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                color: #ffffff;
+            }
+
+            .magnitude {
+                display: inline-block;
+                background: #fd0000;
+                color: #000;
+                padding: 0.2rem 0.8rem;
+                border-radius: 20px;
+                font-weight: 700;
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline-marker {
+                width: 45%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            .timeline-dot {
+                width: 20px;
+                height: 20px;
+                background: #fd0000;
+                border-radius: 50%;
+                border: 4px solid #000;
+                box-shadow: 0 0 0 4px rgba(253, 0, 0, 0.3);
+                transition: all 0.3s ease;
+                position: relative;
+                z-index: 2;
+            }
+
+            .timeline-item.visible .timeline-dot {
+                animation: pulse 2s ease infinite;
+            }
+
+            @keyframes pulse {
+                0%, 100% {
+                    box-shadow: 0 0 0 4px rgba(253, 0, 0, 0.3);
+                }
+                50% {
+                    box-shadow: 0 0 0 8px rgba(253, 0, 0, 0.1);
+                }
+            }
+
+
+            @media (min-width: 768px) {
+                main {
+                    width: 70%;
+                }
+            }
+
+            /* Media Queries - Desktop */
+            @media (min-width: 1200px) {
+                main {
+                    width: 50%;
+                }
+            }
+
+            @media (orientation: landscape) {
+                main object.mobile {
+                    display: none;
+                }
+
+                main object.desktop {
+                    display: block;
+                }
+            }
+
+            @media (min-width: 768px) {
+                main object.desktop {
+                    margin-left: -10%;
+                    margin-right: -10%;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                main object.desktop {
+                    margin-left: -25%;
+                    margin-right: -25%;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .timeline-line {
+                    left: 20px;
+                }
+
+                .timeline-item {
+                    flex-direction: column !important;
+                    align-items: flex-start;
+                    padding-left: 50px;
+                    margin-bottom: 3rem;
+                }
+
+                .timeline-content {
+                    width: 100%;
+                }
+
+                .timeline-marker {
+                    position: absolute;
+                    left: 0;
+                    width: 40px;
+                }
+
+                .timeline-dot {
+                    width: 16px;
+                    height: 16px;}
+                 }
+           
+                
+seccion-2011 {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(253, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-left: 4px solid #ff0000;
+    border-radius: 8px;
+}
+
+.seccion-2011 h2 {
+    color: #ff0e0e;
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.seccion-2011 h3 {
+    color: #ff0000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.seccion-2011 h4 {
+    color: #ff0000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.seccion-2011 p {
+    color: #ffffff;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.impacto-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(253, 0, 0, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid rgba(253, 0, 0, 0.3);
+}
+
+.impacto-item ul {
+    margin-left: 1.5rem;
+    color: #ffffff;
+}
+
+.impacto-item li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.ejemplos-lista,
+.importancia-lista {
+    margin-left: 1.5rem;
+    color: #fffcfc;
+}
+
+.ejemplos-lista li,
+.importancia-lista li {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.importancia-lista strong {
+    color: #ad1313;
+    font-weight: 700;
+}
+
+.resumen-final {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(253, 0, 0, 0.1);
+    border: 2px solid rgba(253, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.resumen-final h3 {
+    text-align: center;
+    color: #fd0000;
+    margin-bottom: 1rem;
+}
+
+.resumen-final p {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+ /* Gráfico Comparativo Interactivo */
+            grafico-comparativo-container {
+                margin: 3rem 0;
+                padding: 2rem;
+                background: rgba(0, 0, 0, 0.6);
+                border-radius: 12px;
+                border: 2px solid rgba(253, 0, 0, 0.3);
+            }
+
+            .grafico-comparativo-container h3 {
+                color: #ff0000
+                font-size: 1.5rem;
+                margin-bottom: 0rem;
+            }
+
+            .subtitulo-grafico {
+                color: #ffffff;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+    
+            }
+
+            .comparacion-visual {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .grupo-afectado {
+                background: rgba(253, 0, 0, 0.08);
+                padding: 1.5rem;
+                border-radius: 10px;
+                border-left: 5px solid rgba(255, 0, 0, 0.28);
+                transition: all 0.3s ease;
+            }
+
+            .grupo-afectado:hover {
+                background: rgba(253, 0, 0, 0.15);
+                transform: translateX(10px);
+                box-shadow: 0 5px 20px rgba(253, 0, 0, 0.3);
+            }
+
+            .icono-grupo {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .edad-badge {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 3px solid #ff0000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-weight: 800;
+                color: #fd0000;
+                transition: all 0.3s ease;
+            }
+
+            .grupo-afectado:hover .edad-badge {
+                transform: scale(1.1) rotate(5deg);
+                box-shadow: 0 0 30px rgba(253, 0, 0, 0.6), inset 0 0 30px rgba(253, 0, 0, 0.2);
+            }
+
+            .grupo-afectado h4 {
+                color: #ff3333;
+                text-align: center;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .barra-contenedor {
+                width: 100%;
+                height: 60px;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 30px;
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 1.5rem;
+                box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+            }
+
+            .barra-progreso {
+                height: 100%;
+                border-radius: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding-right: 1.5rem;
+                position: relative;
+                transition: width 2s ease-out;
+                width: 0;
+                animation: llenarBarra 2s ease-out forwards;
+            }
+
+            .barra-ninos {
+                background: linear-gradient(90deg, #ff0000 0%, #ff0000 100%);
+            }
+
+            .barra-adultos {
+                background: linear-gradient(90deg, #ff6600 0%, #ff6a00 100%);
+            }
+
+            .barra-ancianos {
+                background: linear-gradient(90deg, #c45050 0%, #ce5050 100%);
+            }
+
+            @keyframes llenarBarra {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: var(--ancho-final);
+                }
+            }
+
+            .barra-ninos {
+                --ancho-final: 78%;
+            }
+
+            .barra-adultos {
+                --ancho-final: 52%;
+            }
+
+            .barra-ancianos {
+                --ancho-final: 65%;
+            }
+
+            .porcentaje-label {
+                font-size: 1.5rem;
+                font-weight: 800;
+                color: #fff;
+                text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+                position: relative;
+                z-index: 2;
+            }
+
+            .detalles-impacto {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            .detalles-impacto li {
+                padding: 0.5rem 0.5rem 0.5rem 2rem;
+                color: #ffffff;
+                position: relative;
+                line-height: 1.6;
+            }
+
+            .detalles-impacto li::before {
+                content: "▸";
+                position: absolute;
+                left: 0.5rem;
+                color: #ff0000;
+                font-weight: bold;
+            }
+
+            .detalles-impacto strong {
+                color: #c80000;
+                font-weight: 700;
+            }
+
+            .nota-metodologica {
+                background: rgba(253, 0, 0, 0.05);
+                padding: 1.5rem;
+                border-radius: 8px;
+                border: 1px solid #ff0000;
+                margin-top: 2rem;
+            }
+
+            .nota-metodologica p {
+                color: #ffffff;
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin: 0;
+            }
+
+            .nota-metodologica strong {
+                color: #ff3333;
+            }
+
+            /* Responsive para el gráfico */
+            @media (min-width: 768px) {
+                .comparacion-visual {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                .grupo-afectado {
+                    flex: 1;
+                }
+
+                .grupo-afectado:hover {
+                    transform: translateY(-10px);
+                }           
+            
+            
+
+
+            @media (orientation: landscape) and (min-width: 1200px) {
+                .timeline-container {
+                    max-width: 1400px;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="escondido">
+            <symbol id="location" viewBox="0 0 100 100">
+                <path d="M36.73,36.09a13,13,0,0,0,13,12.67A12.65,12.65,0,0,0,62.44,36.09a13.22,13.22,0,0,0-9.59-12.67v-18A31.37,31.37,0,0,1,81.14,36.58a30.89,30.89,0,0,1-4.55,16.36l-25,41.21H47.93L23,52.94A31.36,31.36,0,0,1,46.7,5.46v18A13.41,13.41,0,0,0,36.73,36.09Z"></path>
+            </symbol>
+
+            <symbol id="time" viewBox="0 0 100 100">
+                <path d="M15.44,49H6.33a43.68,43.68,0,0,1,87.34,0L89.24,52.1,84.56,49a34.57,34.57,0,0,0-69.12,0Zm1.84,29.77A44.16,44.16,0,0,1,6.83,56.65h9.22a33.86,33.86,0,0,0,7.63,15.62Zm5.66,5.41,6.4-6.52A34.17,34.17,0,0,0,46.19,84.2v9.22A42.43,42.43,0,0,1,22.94,84.2ZM86.53,64.64,54.31,47.91V25.16H47.05V52.22l36,18.94ZM77.55,84a43.22,43.22,0,0,1-23.61,9.47V84.2a32.11,32.11,0,0,0,17-6.77Z"></path>
+            </symbol>
+
+            <symbol id="tsunami" viewBox="0 0 100 100">
+                <path d="M91.33,88.22H8.92c-2.22,0-3.57-1.23-3.57-3a4.63,4.63,0,0,1,.61-2L17.77,62.51c5.17-9,16.36-13.9,27.06-13.9,11.57,0,17.35,5.54,17.35,10.46,0,4.3-3.32,7.13-6.77,8.12H53.07a3.49,3.49,0,0,0-3.56-3.82,3.42,3.42,0,0,0-3.32,3.45c0,3.81,4.79,7.5,13.16,7.5,7.75,0,18-3.57,24.6-9.1L94.28,83.3a3.51,3.51,0,0,1,.37,1.84A3,3,0,0,1,91.33,88.22Zm-10.21-28L52.71,10.36a3.19,3.19,0,0,0-5.66,0L26.14,47.51a36.15,36.15,0,0,1,12.67-4.06L49.88,23.89,73.37,64.36A19.72,19.72,0,0,0,81.12,60.17Z"></path>
+            </symbol>
+
+            <symbol id="magnitude" viewBox="0 0 100 100">
+                <path d="M5.47,58.58H17A44.19,44.19,0,0,0,5.47,82.93Zm17.84,0h7.62l-3.56-35.8,13.4-5.66V30.65l12.06,4.8-4.06,22A31.82,31.82,0,0,0,18.39,89.08H9.53A40.25,40.25,0,0,1,23.31,58.58ZM50,61.9A27.18,27.18,0,0,1,77.18,89.08h-9a18.27,18.27,0,1,0-36.53,0H22.82A27.18,27.18,0,0,1,50,61.9Zm0,13.28a13.86,13.86,0,0,1,13.78,13.9H54.92a4.92,4.92,0,0,0-9.84,0h-9A14,14,0,0,1,50,75.18Zm8.24-16.6a35.85,35.85,0,0,0-5.29-1L57.5,32.87,45,28V15.28l4.42-1.85L69.56,18.6l3.81,40h3.32a40.25,40.25,0,0,1,13.78,30.5H81.61A31.68,31.68,0,0,0,58.24,58.58Zm24.72,0H94.53V82.93A45.16,45.16,0,0,0,83,58.58Z"></path>
+            </symbol>
+        </svg>
+
+        <header>
+            <div>
+                <h1>El Pulso de la Tierra: Actividad Sísmica en Japón</h1>
+                <h5>Por <a href=https://github.com/lionmarty>Martina Muñoz</a>, <a href=https://github.com/pazvp>Paz Valenzuela</a> y <a href=https://github.com/belenporras>Belén Porras</a></h5>
+                <h6>25 de noviembre, 2025</h6>
+            </div>
+        </header>
+
+        <main>
+            <img src="Nueva carpeta/mapamundi.png" class="mapamundi" alt="imagen editada por Gemini, le pedí sacar las letras">
+            <p class="lead"> Japón es un archipiélago de 6.852 islas en el este de Asia, reconocido por combinar tradición milenaria, innovación tecnológica y una gran diversidad de paisajes que van desde ciudades ultramodernas hasta templos ancestrales y montañas sagradas. </p>
+            
+            <div class="imagenes-lado-a-lado">
+                <img src="Nueva carpeta/ciudad.png" alt="Ciudad de Japón">
+                <img src="Nueva carpeta/templo.png" alt="Templo japonés">
+            </div>
+            
+            
+            <p> <em>Japón</em> se encuentra en una de las zonas sísmicamente más activas del planeta: el Cinturón de Fuego del Pacífico. Este territorio está ubicado en la confluencia de cuatro placas tectónicas principales: la Placa del Pacífico, la Placa Norteamericana, la Placa Euroasiática y la Placa Filipina. El constante movimiento y colisión de estas placas genera aproximadamente <em>1,500 terremotos al año </em>en el archipiélago, aunque la mayoría son imperceptibles para sus habitantes.</p>
+             <img src="Nueva carpeta/puntos.jpeg" alt="puntos" style="width: 101%; display: block; margin: 2rem auto;">
+
+            
+            <div class="timeline-container">
+                <h2 class="timeline-title">Cuatro Terremotos que Transformaron una Nación</h2>
+                
+                <div class="timeline-line">
+                    <div class="timeline-progress" id="timelineProgress"></div>
+                </div>
+
+                <div class="timeline-items">
+                    <!-- 1707 - Hōei -->
+                    <div class="timeline-item" data-year="1707">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1707</div>
+                            <h3 class="timeline-title-event">Terremoto Hōei</h3>
+                            <p class="timeline-description">
+                                El segundo terremoto más fuerte de la historia japonesa sacudió el suroeste del país. 
+                                49 días después, el Monte Fuji entró en erupción por última vez en su historia.
+                            </p>
+                            <span class="magnitude">Magnitud 8.6</span>
+                        </div>
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" style="opacity: 0;"></div>
+                    </div>
+
+
+                    <div class="timeline-item" data-year="1923">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1923</div>
+                            <h3 class="timeline-title-event">Gran Terremoto de Kantō</h3>
+                            <p class="timeline-description">
+                                El terremoto más letal de la historia japonesa devastó Tokio y Yokohama. 
+                                Los incendios subsecuentes duraron tres días, cobrando más de 142.000 vidas.
+                            </p>
+                            <span class="magnitude">Magnitud 7.9</span>
+                        </div>
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" style="opacity: 0;"></div>
+                    </div>
+
+                    <!-- 1995 - Kōbe -->
+                    <div class="timeline-item" data-year="1995">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1995</div>
+                            <h3 class="timeline-title-event">Terremoto de Kōbe</h3>
+                            <p class="timeline-description">
+                                El sismo reveló vulnerabilidades en la infraestructura moderna japonesa. 
+                                Transformó los códigos de construcción y marcó el inicio del Día Nacional de Prevención de Desastres.
+                            </p>
+                            <span class="magnitude">Magnitud 6.9</span>
+                        </div>
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" style="opacity: 0;"></div>
+                    </div>
+
+                    <div class="timeline-item" data-year="2011">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2011</div>
+                            <h3 class="timeline-title-event">EL GRAN TERREMOTO DE JAPÓN</h3>
+                            <p class="timeline-description">
+                                El terremoto más poderoso jamás registrado en Japón, generó un tsunami devastador 
+                                y provocó el accidente nuclear de Fukushima. Triple catástrofe que cambió al mundo.
+                            </p>
+                            <span class="magnitude">Magnitud 9.1</span>
+                        </div>
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content" style="opacity: 0;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2>Actividad sísmica actual de su país o región telúrica</h2>
+            <p>Texto de introducción a los registros de actualidad.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                          <svg><use href="#location"></use></svg> place
+                        </th>
+                        <th>
+                            <svg><use href="#time"></use></svg> time
+                        </th>
+                        <th>
+                            <svg><use href="#magnitude"></use></svg> mag
+                        </th>
+                        <th>
+                            <svg><use href="#tsunami"></use></svg> tsunami
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="cl"></tbody>
+            </table>
+
+            <div class="mapas" id="mapaCL"></div>
+
+            <h3> Japón comparando con otros países</h3>
+            <p>Registros sobre 3.9 M del último mes, comparado con Japón y Rusia</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" id="viz"></svg>
+            
+
+        <section class="seccion-2011">
+                <h2>LO QUE DEJÓ EL 2011...</h2>
+                
+                <p>El 11 de marzo de 2011, un terremoto de magnitud 9.0 —el más fuerte registrado en la historia de Japón— sacudió la región de Tōhoku. El movimiento telúrico fue tan intenso que duró casi seis minutos, y poco después un tsunami devastador golpeó la costa con olas que superaron los 10 metros en numerosos sectores, llevandose todo a su paso.</p>
+                <p>Aunque la atención mundial se centró en la magnitud de la destrucción, los niños fueron uno de los grupos más vulnerables y profundamente afectados.</p>
+  
+            
+           <div class="grafico-comparativo-container">
+                    <h3>Impacto Psicológico del Desastre</h3>
+                    <p class="subtitulo-grafico">Porcentaje de población afectada por trauma severo post-terremoto</p>
+                    
+                    <div class="comparacion-visual">
+                        <div class="grupo-afectado" data-grupo="ninos">
+                            <div class="icono-grupo">
+                                <div class="edad-badge">0-17</div>
+                            </div>
+                            <h4>Niños</h4>
+                            <div class="barra-contenedor">
+                                <div class="barra-progreso barra-ninos" data-porcentaje="78">
+                                    <span class="porcentaje-label">78%</span>
+                                </div>
+                            </div>
+                            <ul class="detalles-impacto">
+                                <li><strong>241 niños</strong> quedaron huérfanos</li>
+                                <li><strong>1,580 niños</strong> perdieron al menos un padre</li>
+                                <li><strong>78%</strong> con síntomas de estrés postraumático</li>
+                                <li><strong>92%</strong> de escuelas en la zona afectadas</li>
+                            </ul>
+                        </div>
+
+                        <div class="grupo-afectado" data-grupo="adultos">
+                            <div class="icono-grupo">
+                                <div class="edad-badge">18-64</div>
+                            </div>
+                            <h4>Adultos</h4>
+                            <div class="barra-contenedor">
+                                <div class="barra-progreso barra-adultos" data-porcentaje="52">
+                                    <span class="porcentaje-label">52%</span>
+                                </div>
+                            </div>
+                            <ul class="detalles-impacto">
+                                <li><strong>15,899 fallecidos</strong> totales</li>
+                                <li><strong>52%</strong> con síntomas de trauma</li>
+                                <li><strong>450,000</strong> desplazados</li>
+                                <li><strong>340,000</strong> edificios destruidos</li>
+                            </ul>
+                        </div>
+
+                        <div class="grupo-afectado" data-grupo="ancianos">
+                            <div class="icono-grupo">
+                                <div class="edad-badge">65+</div>
+                            </div>
+                            <h4>Adultos Mayores</h4>
+                            <div class="barra-contenedor">
+                                <div class="barra-progreso barra-ancianos" data-porcentaje="65">
+                                    <span class="porcentaje-label">65%</span>
+                                </div>
+                            </div>
+                            <ul class="detalles-impacto">
+                                <li><strong>65%</strong> del total de fallecidos</li>
+                                <li><strong>65%</strong> con depresión post-desastre</li>
+                                <li>Mayor vulnerabilidad física</li>
+                                <li>Dificultad de evacuación</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="nota-metodologica">
+                        <p><strong>Nota:</strong> Los porcentajes de trauma psicológico se basan en estudios realizados entre 2011-2013 por instituciones japonesas de salud mental. Los niños mostraron mayor prevalencia de TEPT debido a su menor capacidad de procesamiento emocional y mayor dependencia de estructuras familiares y comunitarias que fueron destruidas.</p>
+                    </div>
+                </div>
+                
+                <h3>Impacto en los niños: realidad emocional y social</h3>
+                
+                <div class="impacto-item">
+                    <h4>Pérdida de familiares:</h4>
+                    <p>Miles de niños quedaron huérfanos o perdieron a uno de sus padres. En muchas escuelas, varios compañeros nunca regresaron a clases.</p>
+                    <img src="Nueva carpeta/niñosolo.png" style="width: 96%; display: block; margin: 1.5rem auto;">
+               </div>
+
+                <div class="impacto-item">
+                    <h4>Escuelas destruidas:</h4>
+                    <p>Numerosos establecimientos fueron inundados o colapsaron. En distintos pueblos, las escuelas tuvieron que transformarse en refugios improvisados para sobrevivientes.</p>
+                     <img src="Nueva carpeta/ciudad destruida.png" style="width: 101%; display: block; margin: 1.5rem auto;">
+                </div>
+
+                <div class="impacto-item">
+                    <h4>Trauma emocional:</h4>
+                    <ul>
+                        <li>Miedo constante a las réplicas</li>
+                        <li>Ansiedad ante las alarmas de emergencia</li>
+                        <li>Dificultad para dormir</li>
+                        <li>Necesidad de apego extremo a figuras adultas</li>
+                        <li>Sobresalto ante ruidos fuertes o movimientos inesperados</li>
+                    </ul>
+                    <img src="Nueva carpeta/niñotrauma.png" style="width: 96%; display: block; margin: 1.5rem auto;">
+                </div>
+
+                <div class="impacto-item">
+                    <h4>Desarraigo:</h4>
+                    <p>Producto de la destruccion de cientos de hogares, miles de familias fueron trasladadas a viviendas temporales por meses e incluso años, rompiendo amistades, rutinas y vínculos comunitarios esenciales para la estabilidad de los niños.</p>
+                    <img src="Nueva carpeta/casadestruida.png" style="width: 101%; display: block; margin: 1.5rem auto;">
+                </div>
+
+                <div class="impacto-item">
+                    <h4>Responsabilidad temprana:</h4>
+                    <p>Muchos tuvieron que madurar de golpe, ayudando en tareas de los refugios, apoyando a vecinos mayores o cuidando a hermanos menores mientras los adultos enfrentaban la incertidumbre laboral y económica.</p>
+                </div>
+
+                <h3>Casos vividos</h3>
+                <ul class="ejemplos-lista">
+                    <li>Estudiantes que corrieron por rutas elevadas mientras el tsunami avanzaba detrás de ellos.</li>
+                    <li>Niños que vieron desaparecer sus barrios bajo el agua desde refugios improvisados, esperando a que sus padres lograran llegar.</li>
+                    <li>Menores que pasaron noches enteras sin saber si su familia estaba viva.</li>
+                    <li>En los refugios, los niños compartían mantas, cuadernos y pequeñas raciones de comida, formando lazos que los ayudaron a sobrellevar la pérdida.</li>
+                </ul>
+
+                <h3>Actualidad: lo que dejó esta generación</h3>
+                <p>A más de una década, muchos de esos niños ahora son jóvenes adultos que hablan de cómo la tragedia marcó su forma de ver el mundo. Muchos han orientado su vida hacia áreas como la prevención de desastres, la ingeniería, la salud mental o el voluntariado comunitario.</p>
+                
+                <p>Japón, por su parte, ha reforzado aún más su cultura de preparación sísmica, desarrollando nuevas tecnologías de alerta temprana, infraestructuras más resistentes y programas escolares que enseñan a los niños desde temprana edad a actuar frente a emergencias.</p>
+
+                <h3>Por qué es importante conocer y hablar sobre los terremotos</h3>
+                <ul class="importancia-lista">
+                    <li><strong>Promueve la prevención:</strong> entender cómo se comportan los sismos permite tomar decisiones que salvan vidas.</li>
+                    <li><strong>Fomenta la resiliencia:</strong> conocer experiencias reales ayuda a valorar la preparación emocional y comunitaria.</li>
+                    <li><strong>Da contexto histórico:</strong> evita que tragedias como la de 2011 se olviden y permite aprender de ellas.</li>
+                    <li><strong>Protege a los más vulnerables:</strong> comprender el impacto en los niños impulsa políticas de apoyo psicológico, educación y acompañamiento familiar.</li>
+                </ul>
+
+                <div class="resumen-final">
+                    <h3>En resumen</h3>
+                    <p>El terremoto de 2011 no solo cambió la geografía de Japón, sino la vida de una generación completa. Los niños enfrentaron miedo, pérdida, desarraigo y responsabilidad temprana, pero también mostraron una resiliencia profunda. Hoy, sus historias y aprendizajes han contribuido a un Japón más preparado y consciente, recordando al mundo la importancia de conocer, respetar y prepararse para la fuerza inevitable de los terremotos.</p>
+                </div>
+            </section>
+        
+
+            <div class="fuentes">
+                <h4>Fuentes:</h4>
+                <p>USGS - Earthquake Hazards Program: <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">Link</a>.</p>
+                <p>Japan Meteorological Agency (JMA): <a href="https://www.jma.go.jp/jma/en/Activities/earthquake.html">Link</a>.</p>
+                <p>Reconstruction Agency - Great East Japan Earthquake: <a href="https://www.reconstruction.go.jp/english/">Link</a>.</p>
+                <p>WHO Western Pacific - Mental Health Impact: <a href="https://www.who.int/westernpacific/emergencies/2011-japan-earthquake">Link</a>.</p>
+                <p>UNICEF Japan - Children and Disasters: <a href="https://www.unicef.or.jp/english/">Link</a>.</p>
+                <p>USGS - The Pacific Ring of Fire: <a href="https://www.usgs.gov/programs/earthquake-hazards/science/ring-fire">Link</a>.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Desarrollado para <a href="#" target="_blank">Diseño y visualización de información | Universidad de Chile</a> &copy; 2025</p>
+        </footer>
+
+        <script>
+            
+            function handleScrollAnimation() {
+                const items = document.querySelectorAll('.timeline-item');
+                const progress = document.getElementById('timelineProgress');
+                
+                items.forEach((item, index) => {
+                    const rect = item.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                
+                    if (rect.top < windowHeight * 0.8) {
+                        item.classList.add('visible');
+                    }
+                });
+                
+                // Actualizar barra de progreso
+                const container = document.querySelector('.timeline-items');
+                const containerRect = container.getBoundingClientRect();
+                const containerTop = containerRect.top;
+                const containerHeight = containerRect.height;
+                const windowHeight = window.innerHeight;
+                
+                // Calcular porcentaje de scroll
+                let scrollPercentage = 0;
+                if (containerTop < windowHeight * 0.5) {
+                    scrollPercentage = Math.min(
+                        100,
+                        Math.max(0, ((windowHeight * 0.5 - containerTop) / containerHeight) * 100)
+                    );
+                }
+                
+                progress.style.height = scrollPercentage + '%';
+            }
+
+            // Ejecutar al cargar y al hacer scroll
+            window.addEventListener('scroll', handleScrollAnimation);
+            window.addEventListener('load', handleScrollAnimation);
+            
+            // Ejecutar una vez al inicio
+            handleScrollAnimation();
+               // Ejecutar una vez al inicio
+            handleScrollAnimation();
+        </script>
+
+        <script>
+            // Función para formatear fecha
+            function formatDate(timestamp) {
+                const date = new Date(timestamp);
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const year = date.getFullYear();
+                const hours = String(date.getHours()).padStart(2, '0');
+                const minutes = String(date.getMinutes()).padStart(2, '0');
+                return `${day}/${month}/${year} ${hours}:${minutes}`;
+            }
+
+            // Cargar datos de terremotos de la última semana con magnitud >= 2.5
+            fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Total earthquakes:', data.features.length);
+                    
+                    // Filtrar terremotos >= 4.0 M
+                    const allQuakes = data.features.filter(q => q.properties.mag >= 4.0);
+                    
+                    // Filtrar por países
+                    const japanQuakes = allQuakes.filter(quake => {
+                        const place = quake.properties.place ? quake.properties.place.toLowerCase() : '';
+                        return place.includes('japan') || place.includes('japón');
+                    });
+
+                    const chileQuakes = allQuakes.filter(q => {
+                        const place = q.properties.place ? q.properties.place.toLowerCase() : '';
+                        return place.includes('chile');
+                    });
+
+                    const russiaQuakes = allQuakes.filter(q => {
+                        const place = q.properties.place ? q.properties.place.toLowerCase() : '';
+                        return place.includes('russia') || place.includes('rusia');
+                    });
+
+                    console.log('Japan earthquakes >= 4.0:', japanQuakes.length);
+                    console.log('Chile earthquakes >= 4.0:', chileQuakes.length);
+                    console.log('Russia earthquakes >= 4.0:', russiaQuakes.length);
+
+                    // Llenar tabla Japón
+                    const clTableBody = document.getElementById('cl');
+                    if (japanQuakes.length === 0) {
+                        clTableBody.innerHTML = '<tr><td colspan="4">No hay registros recientes de terremotos >= 4.0 M en Japón</td></tr>';
+                    } else {
+                        japanQuakes.forEach(quake => {
+                            const row = `
+                                <tr>
+                                    <td><a href="${quake.properties.url}" target="_blank">${quake.properties.place}</a></td>
+                                    <td><span>${formatDate(quake.properties.time)}</span></td>
+                                    <td><strong>${quake.properties.mag.toFixed(1)}</strong></td>
+                                    <td>${quake.properties.tsunami === 1 ? 'Sí' : 'No'}</td>
+                                </tr>
+                            `;
+                            clTableBody.innerHTML += row;
+                        });
+                    }
+
+                    // Crear mapa Japón
+                    const mapCL = L.map('mapaCL').setView([36.2048, 138.2529], 5);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors'
+                    }).addTo(mapCL);
+                    
+                    japanQuakes.forEach(quake => {
+                        const coords = quake.geometry.coordinates;
+                        const mag = quake.properties.mag;
+                        L.circleMarker([coords[1], coords[0]], {
+                            radius: Math.max(mag * 2, 4),
+                            fillColor: mag >= 6 ? '#8B0000' : mag >= 5 ? '#fd0000' : '#ff6600',
+                            color: '#000',
+                            weight: 1,
+                            opacity: 1,
+                            fillOpacity: 0.7
+                        }).addTo(mapCL).bindPopup(`
+                            <b>${quake.properties.place}</b><br>
+                            Magnitud: ${mag.toFixed(1)}<br>
+                            ${formatDate(quake.properties.time)}
+                        `);
+                    });
+
+                    // Crear visualización comparativa con círculos SVG
+                    const counts = [
+                        { name: 'Japón', count: japanQuakes.length },
+                        { name: 'Chile', count: chileQuakes.length },
+                        { name: 'Rusia', count: russiaQuakes.length }
+                    ];
+
+                    const maxCount = Math.max(...counts.map(c => c.count));
+                    const svg = document.getElementById('viz');
+                    svg.innerHTML = ''; // Limpiar SVG
+                    
+                    // Crear grupos para cada país
+                    const spacing = 33.33;
+                    counts.forEach((country, index) => {
+                        // Calcular radio proporcional
+                        const maxRadius = 15;
+                        const minRadius = 3;
+                        const radius = maxCount > 0 ? minRadius + (country.count / maxCount) * (maxRadius - minRadius) : minRadius;
+                        
+                        const cx = spacing * (index + 0.5);
+                        const cy = 35 - radius;
+                        
+                        // Crear círculo
+                        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                        circle.setAttribute('cx', cx);
+                        circle.setAttribute('cy', cy);
+                        circle.setAttribute('r', radius);
+                        circle.setAttribute('fill', '#fd0000');
+                        circle.setAttribute('opacity', '0.8');
+                        circle.setAttribute('stroke', '#000');
+                        circle.setAttribute('stroke-width', '0.3');
+                        svg.appendChild(circle);
+                        
+                        // Añadir número dentro del círculo
+                        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                        text.setAttribute('x', cx);
+                        text.setAttribute('y', cy);
+                        text.setAttribute('text-anchor', 'middle');
+                        text.setAttribute('dominant-baseline', 'middle');
+                        text.setAttribute('fill', '#fff');
+                        text.setAttribute('font-size', '4');
+                        text.setAttribute('font-weight', 'bold');
+                        text.textContent = country.count;
+                        svg.appendChild(text);
+                        
+                        // Añadir etiqueta del país
+                        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                        label.setAttribute('x', cx);
+                        label.setAttribute('y', 45);
+                        label.setAttribute('text-anchor', 'middle');
+                        label.setAttribute('fill', '#fd0000');
+                        label.setAttribute('font-size', '3.5');
+                        label.setAttribute('font-weight', '600');
+                        label.textContent = country.name;
+                        svg.appendChild(label);
+                    });
+
+                })
+                .catch(error => {
+                    console.error('Error cargando datos:', error);
+                    document.getElementById('cl').innerHTML = '<tr><td colspan="4">Error al cargar los datos</td></tr>';
+                });
+        </script>
+    </body>
+</html>
